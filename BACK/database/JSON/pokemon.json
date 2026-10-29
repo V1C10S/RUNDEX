@@ -1,0 +1,493 @@
+[
+  {
+    "nome": "Pokémon Red",
+    "slug": "pokemon-red",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Game Boy",
+      "Nintendo 3DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Green",
+    "slug": "pokemon-green",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Game Boy",
+      "Game Boy Color",
+      "Game Boy Advance"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Blue",
+    "slug": "pokemon-blue",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Game Boy",
+      "Nintendo 3DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Yellow",
+    "slug": "pokemon-yellow",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Game Boy",
+      "Nintendo 3DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Gold",
+    "slug": "pokemon-gold",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo 3DS",
+      "Game Boy",
+      "Game Boy Color"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Silver",
+    "slug": "pokemon-silver",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo 3DS",
+      "Game Boy",
+      "Game Boy Color"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Crystal",
+    "slug": "pokemon-crystal",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo 3DS",
+      "Game Boy Color"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Ruby",
+    "slug": "pokemon-ruby",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Game Boy Advance"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Sapphire",
+    "slug": "pokemon-sapphire",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Game Boy Advance"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Emerald",
+    "slug": "pokemon-emerald",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Game Boy Advance"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon FireRed",
+    "slug": "pokemon-firered",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Game Boy Advance"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "YES"
+  },
+  {
+    "nome": "Pokémon LeafGreen",
+    "slug": "pokemon-leafgreen",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Game Boy Advance"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "YES"
+  },
+  {
+    "nome": "Pokémon Diamond",
+    "slug": "pokemon-diamond",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Pearl",
+    "slug": "pokemon-pearl",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Platinum",
+    "slug": "pokemon-platinum",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "YES"
+  },
+  {
+    "nome": "Pokémon HeartGold",
+    "slug": "pokemon-heartgold",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "YES"
+  },
+  {
+    "nome": "Pokémon SoulSilver",
+    "slug": "pokemon-soulsilver",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "YES"
+  },
+  {
+    "nome": "Pokémon Black",
+    "slug": "pokemon-black",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon White",
+    "slug": "pokemon-white",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Black 2",
+    "slug": "pokemon-black-2",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon White 2",
+    "slug": "pokemon-white-2",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon X",
+    "slug": "pokemon-x",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo 3DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Y",
+    "slug": "pokemon-y",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo 3DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Omega Ruby",
+    "slug": "pokemon-omega-ruby",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo 3DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "YES"
+  },
+  {
+    "nome": "Pokémon Alpha Sapphire",
+    "slug": "pokemon-alpha-sapphire",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo 3DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "YES"
+  },
+  {
+    "nome": "Pokémon Sun",
+    "slug": "pokemon-sun",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo 3DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Moon",
+    "slug": "pokemon-moon",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo 3DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Ultra Sun",
+    "slug": "pokemon-ultra-sun",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo 3DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Ultra Moon",
+    "slug": "pokemon-ultra-moon",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo 3DS"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Let's Go, Pikachu!",
+    "slug": "pokemon-let-s-go-pikachu",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo Switch"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "YES"
+  },
+  {
+    "nome": "Pokémon Let's Go, Eevee!",
+    "slug": "pokemon-let-s-go-eevee",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo Switch"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "YES"
+  },
+  {
+    "nome": "Pokémon Sword",
+    "slug": "pokemon-sword",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo Switch"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Shield",
+    "slug": "pokemon-shield",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo Switch"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Brilliant Diamond",
+    "slug": "pokemon-brilliant-diamond",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo Switch"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "YES"
+  },
+  {
+    "nome": "Pokémon Shining Pearl",
+    "slug": "pokemon-shining-pearl",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo Switch"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "YES"
+  },
+  {
+    "nome": "Pokémon Scarlet",
+    "slug": "pokemon-scarlet",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo Switch"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  },
+  {
+    "nome": "Pokémon Violet",
+    "slug": "pokemon-violet",
+    "franchise": "Pokémon",
+    "plataforms": [
+      "Nintendo Switch"
+    ],
+    "parent_plataforms": [
+      "Nintendo"
+    ],
+    "image": null,
+    "remake": "NO"
+  }
+]
