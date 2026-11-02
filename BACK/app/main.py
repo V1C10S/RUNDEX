@@ -1,14 +1,15 @@
 import os
 import uvicorn
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from dotenv import load_dotenv
-from routes import router
+from services.connect import lifespan
+
 
 # ===== API =====
 
 
-app = FastAPI(title="CLASS_API")
+app = FastAPI(title="RUNDEX", lifespan=lifespan)
 
 
 # ===== CORS =====
@@ -24,7 +25,13 @@ app.add_middleware(
 # ===== IMPORTS =====
 
 
-app.include_router(router)
+from routes.home import router as home_router
+
+
+# ===== ROUTERS =====
+
+
+app.include_router(home_router)
 
 
 # ===== CHECKING =====

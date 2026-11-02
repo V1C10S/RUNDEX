@@ -61,9 +61,9 @@
     "slug": "pokemon-gold",
     "franchise": "Pokémon",
     "plataforms": [
-      "Nintendo 3DS",
       "Game Boy",
-      "Game Boy Color"
+      "Game Boy Color",
+      "Nintendo 3DS"
     ],
     "parent_plataforms": [
       "Nintendo"
@@ -267,7 +267,7 @@
       "Nintendo"
     ],
     "image": null,
-    "remake": "NO"
+    "remake": "YES"
   },
   {
     "nome": "Pokémon White 2",
@@ -280,7 +280,7 @@
       "Nintendo"
     ],
     "image": null,
-    "remake": "NO"
+    "remake": "YES"
   },
   {
     "nome": "Pokémon X",
@@ -371,7 +371,7 @@
       "Nintendo"
     ],
     "image": null,
-    "remake": "NO"
+    "remake": "YES"
   },
   {
     "nome": "Pokémon Ultra Moon",
@@ -384,7 +384,7 @@
       "Nintendo"
     ],
     "image": null,
-    "remake": "NO"
+    "remake": "YES"
   },
   {
     "nome": "Pokémon Let's Go, Pikachu!",
