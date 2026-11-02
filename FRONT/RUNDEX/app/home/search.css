@@ -1,0 +1,135 @@
+.hero-search {
+  position: absolute;
+  width: 620px;
+  margin-top: 525px;
+  margin-left: 75px;
+}
+
+.hero-search-bar {
+  position: relative;
+  width: 100%;
+  height: 64px;
+  padding: 0 68px 0 24px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  column-gap: 12px;
+  align-items: center;
+  border: 1px solid rgba(101, 230, 194, 0.8);
+  border-radius: 1000px;
+  background: rgba(8, 13, 18, 0.82);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 16px rgba(101, 230, 194, 0.2);
+  transition: box-shadow 250ms ease;
+}
+
+/* Lupa */
+.hero-search-bar::before {
+  content: "";
+  width: 17px;
+  height: 17px;
+  box-sizing: border-box;
+  border: 2px solid #65E6C2;
+  border-radius: 50%;
+  justify-self: center;
+}
+
+.hero-search-bar::after {
+  content: "";
+  position: absolute;
+  left: 42px;
+  top: 38px;
+  width: 8px;
+  height: 2px;
+  border-radius: 2px;
+  background: #65E6C2;
+  transform: rotate(45deg);
+}
+
+.hero-search-bar:focus-within {
+  box-shadow: 0 0 22px rgba(101, 230, 194, 0.35);
+}
+
+.hero-search-bar input {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 16px;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  background:
+    linear-gradient(rgba(200, 200, 200, 0.45), rgba(200, 200, 200, 0.45))
+    left center / 1px 28px no-repeat;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+.hero-search-bar input::placeholder {
+  color: #AAB2BD;
+  opacity: 1;
+}
+
+.hero-search-suggestions {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  max-height: 264px;
+  margin: 0;
+  padding: 8px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  list-style: none;
+  border: 1px solid rgba(101, 230, 194, 0.8);
+  border-radius: 16px;
+  background: #080d12;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font: 16px Arial, sans-serif;
+}
+
+.hero-search-suggestions li {
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hero-search-suggestions li:hover,
+.hero-search-suggestions li[aria-selected="true"] {
+  background: rgba(101, 230, 194, 0.16);
+  color: #65E6C2;
+}
+
+
+.hero-search-button {
+  position: absolute;
+    content: "→";
+  top: 5px;
+  right: 5px;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #65E6C2;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 250ms ease;
+}
+
+.hero-search-button::after {
+  content: "→";
+  color: #081310;
+  font-family: Arial, sans-serif;
+  font-size: 35px;
+  transform: translateY(-4px);
+}
+
+.hero-search-button:hover,
+.hero-search:focus-within .hero-search-button {
+  box-shadow: 0 0 22px rgba(101, 230, 194, 0.35);
+
+}

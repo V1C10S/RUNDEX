@@ -1,0 +1,140 @@
+.card-name-word {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.card-name-letter {
+  display: inline-block;
+}
+
+/* Até 25 caracteres do nome completo, incluindo pontuação e sem contar espaços. */
+:is(.card-1, .card-2, .card-3):hover .card-name-letter[data-letter] {
+  animation-name: card-name-jump;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.card-name-letter[data-letter="1"] {
+  animation-delay: 0s;
+}
+
+.card-name-letter[data-letter="2"] {
+  animation-delay: 0.5s;
+}
+
+.card-name-letter[data-letter="3"] {
+  animation-delay: 1s;
+}
+
+.card-name-letter[data-letter="4"] {
+  animation-delay: 1.5s;
+}
+
+.card-name-letter[data-letter="5"] {
+  animation-delay: 2s;
+}
+
+.card-name-letter[data-letter="6"] {
+  animation-delay: 2.5s;
+}
+
+.card-name-letter[data-letter="7"] {
+  animation-delay: 3s;
+}
+
+.card-name-letter[data-letter="8"] {
+  animation-delay: 3.5s;
+}
+
+.card-name-letter[data-letter="9"] {
+  animation-delay: 4s;
+}
+
+.card-name-letter[data-letter="10"] {
+  animation-delay: 4.5s;
+}
+
+.card-name-letter[data-letter="11"] {
+  animation-delay: 5s;
+}
+
+.card-name-letter[data-letter="12"] {
+  animation-delay: 5.5s;
+}
+
+.card-name-letter[data-letter="13"] {
+  animation-delay: 6s;
+}
+
+.card-name-letter[data-letter="14"] {
+  animation-delay: 6.5s;
+}
+
+.card-name-letter[data-letter="15"] {
+  animation-delay: 7s;
+}
+
+.card-name-letter[data-letter="16"] {
+  animation-delay: 7.5s;
+}
+
+.card-name-letter[data-letter="17"] {
+  animation-delay: 8s;
+}
+
+.card-name-letter[data-letter="18"] {
+  animation-delay: 8.5s;
+}
+
+.card-name-letter[data-letter="19"] {
+  animation-delay: 9s;
+}
+
+.card-name-letter[data-letter="20"] {
+  animation-delay: 9.5s;
+}
+
+.card-name-letter[data-letter="21"] {
+  animation-delay: 10s;
+}
+
+.card-name-letter[data-letter="22"] {
+  animation-delay: 10.5s;
+}
+
+.card-name-letter[data-letter="23"] {
+  animation-delay: 11s;
+}
+
+.card-name-letter[data-letter="24"] {
+  animation-delay: 11.5s;
+}
+
+.card-name-letter[data-letter="25"] {
+  animation-delay: 12s;
+}
+
+@keyframes card-name-jump {
+  0%, 100% {
+    transform: translateY(0) rotate(0) scale(1);
+  }
+  14% {
+    transform: translateY(1px) scale(1.08, 0.9);
+  }
+  43% {
+    transform: translateY(-7px) rotate(-5deg) scale(0.95, 1.08);
+  }
+  71% {
+    transform: translateY(0) rotate(0deg) scale(1.08, 0.92);
+  }
+  86% {
+    transform: translateY(-2px) rotate(-2deg) scale(0.98, 1.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.card-1, .card-2, .card-3):hover .card-name-letter[data-letter] {
+    animation: none;
+  }
+}

@@ -1,0 +1,110 @@
+.header {
+  display: grid;
+  grid-template-columns: auto 2fr auto;
+  align-items: center;
+  column-gap: 70px;
+}
+
+.header-divider {
+  grid-column: 1 / -1;
+}
+
+.header-links {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  column-gap: 50px;
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 1.5rem;
+  color: #C8C8C8;
+}
+
+.header-links-jogos,
+.header-links-detonados,
+.header-links-builds,
+.header-links-pos-game {
+  display: grid;
+  grid-template-columns: 45px auto;
+  align-items: center;
+}
+
+.header-links-jogos img,
+.header-links-detonados img,
+.header-links-builds img,
+.header-links-pos-game img {
+  object-fit: contain;
+  transition: filter 300ms ease;
+}
+
+.header-links-jogos:is(:hover, :focus-visible) img,
+.header-links-detonados:is(:hover, :focus-visible) img,
+.header-links-builds:is(:hover, :focus-visible) img,
+.header-links-pos-game:is(:hover, :focus-visible) img       {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(35%)
+    saturate(645%) hue-rotate(105deg) brightness(97%) contrast(90%);
+}
+
+.header-links a:focus-visible {
+  outline: none;
+}
+
+.header-links:has(a:focus-visible) a:not(:focus-visible) img {
+  filter: none;
+}
+
+
+.header-links span {
+  position: relative;
+  display: inline-block;
+  transition: color 400ms ease;
+}
+
+.header-links span::after {
+  content: "";
+  position: absolute;
+  left: -40px;
+  bottom: -10px;
+  width: 120%;
+  height: 2px;
+  background-color: #65E6C2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease;
+}
+
+
+.header-link-jogos:hover::after{
+  transform: scaleX(1.3) translateX(-5px);
+}
+
+.header-link-detonados:hover::after{
+  transform: scaleX(1.05);
+}
+
+.header-link-builds:hover::after{
+  transform: scaleX(1.2);
+}
+
+.header-link-pos-game:hover::after{
+  transform: scaleX(1.1);
+}
+
+.header-links span:hover {
+  color: #65E6C2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
