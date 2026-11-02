@@ -1,8 +1,11 @@
 ## RUNDEX
 
+
 **O universo dos games na palma da sua mão.**
 
+
 ## TECH'S
+
 
 | Frontend | Next.js 16.4.2, React 19.3, TypeScript e CSS |
 
@@ -48,6 +51,7 @@ RUNDEX/
 
 
 ### COMO COLOCAR O BACK P RODAR
+
 
 - cd BACK
 
