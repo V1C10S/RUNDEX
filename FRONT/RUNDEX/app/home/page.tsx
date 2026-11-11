@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 
-import Header from "../components/header/header";
-import Footer from "../components/footer/footer";
+import Header from "../CNPJ/header/header";
+import Footer from "../CNPJ/footer/footer";
 
 import './background.css'
 import './hero.css'
@@ -27,10 +27,10 @@ export default function HomePage() {
     const [search, setSearch] = useState("");
     const [jogos, setJogos] = useState<Jogo[]>([]);
     const [destaques, setDestaques] = useState<Jogo[]>([]);
-    const [showSuggestions, setShowSuggestions] = useState(false);
-    const [activeSuggestion, setActiveSuggestion] = useState(-1);
+    const [viewsugests, setViewSugests] = useState(false);
+    const [activesugests, setActiveSugests] = useState(-1);
+    const sugestsVisible = viewsugests && jogos.length > 0;
     const suggestionsRef = useRef<HTMLUListElement>(null);
-    const suggestionsVisible = showSuggestions && jogos.length > 0;
 
     useEffect(() => {
         const controller = new AbortController();
@@ -85,109 +85,90 @@ export default function HomePage() {
         };
     }, [search]);
 
+
     useEffect(() => {
-        if (activeSuggestion >= 0) {
-            suggestionsRef.current?.children[activeSuggestion]?.scrollIntoView({
+        if (activesugests >= 0) {
+            suggestionsRef.current?.children[activesugests]?.scrollIntoView({
                 block: "nearest",
             });
         }
-    }, [activeSuggestion]);
+    }, [activesugests]);
 
     function selectGame(jogo: Jogo) {
         setSearch(jogo.name);
         setJogos([]);
-        setShowSuggestions(false);
-        setActiveSuggestion(-1);
+        setViewSugests(false);
+        setActiveSugests(-1);
     }
 
-    function renderFeaturedImage(index: number) {
+
+    const cards = [0, 1, 2].map((index) => {
         const jogo = destaques[index];
-        if (!jogo?.image) return null;
+        let position = 0;
 
-        return (
-            <Image
-                src={jogo.image}
-                alt={jogo.name}
-                width={550}
-                height={496}
-                unoptimized
-                style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}/>
+        const words = (
+            jogo?.name.normalize("NFC").trim().split(/\s+/) ?? []
+        ).map((word) =>
+            Array.from(word).map((letter) => ({
+                letter,
+                position: ++position,
+            }))
         );
-    }
 
-    function renderFeaturedName(index: number) {
-        const jogo = destaques[index];
-        if (!jogo) return null;
-
-        const words = jogo.name.normalize("NFC").trim().split(/\s+/);
-        let letterIndex = 0;
-
-        return (
-            <h3 className="card-name" aria-label={jogo.name}>
-                {words.map((word, wordIndex) => (
-                    <span key={wordIndex} className="card-name-word" aria-hidden="true">
-                        {Array.from(word).map((letter, index) => {
-                            const position = ++letterIndex;
-                            return (
-                                <span
-                                    key={index}
-                                    data-letter={position <= 25 ? position : undefined}
-                                    className="card-name-letter">
-                                    {letter}
-                                </span>
-                            );
-                        })}
-                    </span>
-                ))}
-            </h3>
-        );
-    }
-
-    function renderFeaturedBadges(index: number) {
-        const jogo = destaques[index];
-        if (!jogo) return null;
-
-        return (
-            <div className="card-badges">
-                {jogo.platforms[0] && (
-                    <span className="badge badge-platform">{jogo.platforms[0]}</span>
-                )}
-                {jogo.remake === "YES" && (
-                    <span className="badge badge-remake">REMAKE</span>
-                )}
-            </div>
-        );
-    }
+        return {
+            number: index + 1,
+            jogo,
+            words,
+        };
+    });
 
     function handleSearchKeyDown(event: KeyboardEvent<HTMLInputElement>) {
         if (event.key === "Escape") {
-            setShowSuggestions(false);
-            setActiveSuggestion(-1);
+            setViewSugests(false);
+            setActiveSugests(-1);
             return;
         }
+
         if (jogos.length === 0) return;
 
         if (event.key === "ArrowDown" || event.key === "ArrowUp") {
             event.preventDefault();
-            setShowSuggestions(true);
-            setActiveSuggestion((current) =>
+            setViewSugests(true);
+
+            setActiveSugests((current) =>
                 event.key === "ArrowDown"
                     ? (current + 1) % jogos.length
-                    : current <= 0 ? jogos.length - 1 : current - 1
+                    : current <= 0
+                        ? jogos.length - 1
+                        : current - 1
             );
-        } else if (event.key === "Enter" && suggestionsVisible && activeSuggestion >= 0) {
+        } else if (
+            event.key === "Enter" &&
+            sugestsVisible &&
+            activesugests >= 0
+        ) {
             event.preventDefault();
-            selectGame(jogos[activeSuggestion]);
+            selectGame(jogos[activesugests]);
         }
     }
-
 
     return (
         <main className="background">
         
-            <section>
+
+
+
+
+
+            <section className="header">
                 <Header/>
             </section>
+
+
+
+
+
+
 
             <section className="hero">
 
@@ -275,25 +256,25 @@ export default function HomePage() {
                         role="combobox"
                         aria-autocomplete="list"
                         aria-controls="game-titles"
-                        aria-expanded={suggestionsVisible}
+                        aria-expanded={viewsugests}
                         aria-activedescendant={
-                            suggestionsVisible && activeSuggestion >= 0
-                                ? `game-option-${jogos[activeSuggestion].slug}`
+                            viewsugests && activesugests >= 0
+                                ? `game-option-${jogos[activesugests].slug}`
                                 : undefined
                         }
                         value={search}
                         aria-label="Buscar jogos"
                         placeholder="BUSQUE POR JOGOS"
-                        onFocus={() => setShowSuggestions(true)}
-                        onBlur={() => setShowSuggestions(false)}
+                        onFocus={() => setViewSugests(true)}
+                        onBlur={() => setViewSugests(false)}
                         onKeyDown={handleSearchKeyDown}
                         onChange={(event) => {
                             setSearch(event.target.value);
                             setJogos([]);
-                            setShowSuggestions(true);
-                            setActiveSuggestion(-1);}}/>
+                            setViewSugests(true);
+                            setActiveSugests(-1);}}/>
 
-                        {suggestionsVisible && (
+                        {sugestsVisible && (
                             <ul
                                 id="game-titles"
                                 ref={suggestionsRef}
@@ -306,7 +287,7 @@ export default function HomePage() {
                                         id={`game-option-${jogo.slug}`}
                                         key={jogo.slug}
                                         role="option"
-                                        aria-selected={index === activeSuggestion}
+                                        aria-selected={index === activesugests}
                                         tabIndex={-1}
                                         onPointerDown={(event) => event.preventDefault()}
                                         onClick={() => selectGame(jogo)}
@@ -325,88 +306,99 @@ export default function HomePage() {
                     </div>
                     <div className="hero-search-button"/>                      
                 </div>
-
             </section>
+
+
+
 
             <section className="cards">
                 <div className="cards-content">
-
                     <div className="cards-heading">
                         <div className="cards-line"/>
                         <span className="cards-title">DESTAQUES</span>
                     </div>
 
-                    <div className="cards-list">
+                        <div className="cards-list">
+                            {cards.map((card) => (
+                                <div key={card.number} className={`card-${card.number}`}>
 
-                        <div className="card-1">
-                            {renderFeaturedName(0)}
-                            <div className="card-top">
-                                <div className="card-image">
-                                    {renderFeaturedImage(0)}
+                                    {card.jogo && (
+                                        <h3 className="card-name" aria-label={card.jogo.name}>
+                                            {card.words.map((letters, wordIndex) => (
+                                                <span
+                                                    key={wordIndex}
+                                                    className="card-name-word"
+                                                    aria-hidden="true"
+                                                >
+                                                    {letters.map(({ letter, position }) => (
+                                                        <span
+                                                            key={position}
+                                                            className="card-name-letter"
+                                                            data-letter={
+                                                                position <= 25 ? position : undefined
+                                                            }
+                                                        >
+                                                            {letter}
+                                                        </span>
+                                                    ))}
+                                                </span>
+                                            ))}
+                                        </h3>
+                                    )}
 
-                                </div>                   
-                            </div>
+                                    <div className="card-top">
+                                        <div className="card-image">
+                                            {card.jogo?.image && (
+                                                <Image
+                                                    src={card.jogo.image}
+                                                    alt={card.jogo.name}
+                                                    width={550}
+                                                    height={496}
+                                                    unoptimized/>
+                                                
+                                            )}
+                                        </div>
+                                    </div>
 
-                            <div className="card-bottom">
-                                <div className="cardB-left">
-                                    <span className="card-number">01</span>
+                                    <div className="card-bottom">
+                                        <div className="cardB-left">
+                                            <span className="card-number">
+                                                {String(card.number).padStart(2, "0")}
+                                            </span>
+                                        </div>
+
+                                        <div className="cardB-right">
+                                            <div className="card-badges">
+                                                {card.jogo?.platforms[0] && (
+                                                    <span className="badge badge-platform">
+                                                        {card.jogo.platforms[0]}
+                                                    </span>
+                                                )}
+
+                                                {card.jogo?.remake === "YES" && (
+                                                    <span className="badge badge-remake">
+                                                        REMAKE
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
-
-                                <div className="cardB-right">
-                                    {renderFeaturedBadges(0)}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card-2">
-                            {renderFeaturedName(1)}
-                            <div className="card-top">
-                                <div className="card-image">
-                                    {renderFeaturedImage(1)}
-
-                                </div>
-                            </div>
-
-                            <div className="card-bottom">
-                                <div className="cardB-left">
-                                    <span className="card-number">02</span>
-                                </div>
-
-                                <div className="cardB-right">
-                                    {renderFeaturedBadges(1)}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card-3">
-                            {renderFeaturedName(2)}
-                            <div className="card-top">
-                                <div className="card-image">
-                                    {renderFeaturedImage(2)}
-
-                                </div>
-                            </div>
-
-                            <div className="card-bottom">
-                                <div className="cardB-left">
-                                    <span className="card-number">03</span>
-                                </div>
-
-                                <div className="cardB-right">
-                                    {renderFeaturedBadges(2)}
-                                </div>
-                            </div>
-                        </div>
-
+                            ))}
+                        </div>                   
                     </div>
-
-                </div>
             </section>
 
 
-            <div className="footer-container">
+
+
+
+
+            <section className="footer-container">
                 <Footer/>
-            </div>
+            </section>
+
     </main>
   );
 }
