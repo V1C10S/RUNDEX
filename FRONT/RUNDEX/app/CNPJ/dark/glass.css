@@ -1,0 +1,17 @@
+.header-glass {
+  position: absolute;
+  inset: 0;
+  width: 1330px;
+  height: 150px;
+  border-bottom: 2px solid #65E6C2;
+  border-radius: 16px;
+  background: rgba(67, 85, 88, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 0;
+}
+
+.header > *:not(.header-glass) {
+  position: relative;
+  z-index: 1;
+}

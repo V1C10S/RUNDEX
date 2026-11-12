@@ -1,0 +1,73 @@
+.jogos-filtro,
+.jogos-filtro-fechar {
+    min-height: 44px;
+    padding: 8px 14px;
+    border: 1px solid #447a68;
+    border-radius: 12px;
+    background: #111;
+    color: #65e6c2;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.jogos-filtro {
+    width: min(320px, calc(100% - 50px));
+    margin: 24px clamp(25px, 3vw, 48px) 0;
+    text-align: left;
+}
+
+.jogos-filtro:focus-visible,
+.jogos-filtro-fechar:focus-visible,
+.jogos-filtro-opcoes input:focus-visible {
+    outline: 2px solid #65e6c2;
+    outline-offset: 3px;
+}
+
+.jogos-filtro-popup {
+    position: fixed;
+    inset: 0;
+    width: min(400px, calc(100% - 32px));
+    height: fit-content;
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 24px;
+    overflow: auto;
+    border: 1px solid #447a68;
+    border-radius: 12px;
+    background: #111;
+    color: #f2f2f2;
+    color-scheme: dark;
+}
+
+.jogos-filtro-popup::backdrop {
+    background: rgb(0 0 0 / 65%);
+}
+
+.jogos-filtro-popup h2 {
+    color: #65e6c2;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.jogos-filtro-opcoes {
+    display: grid;
+    gap: 4px;
+    margin: 16px 0;
+}
+
+.jogos-filtro-opcoes legend {
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.jogos-filtro-opcoes label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 32px;
+    cursor: pointer;
+}
+
+.jogos-filtro-opcoes input {
+    accent-color: #65e6c2;
+}

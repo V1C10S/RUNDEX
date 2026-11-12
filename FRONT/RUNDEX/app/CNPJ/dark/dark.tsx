@@ -4,9 +4,8 @@ import Image from "next/image";
 import { useEffect, useRef, type KeyboardEvent } from "react";
 
 import '../header/logo.css'
-import '../header/links.css'
+import './links.css'
 import '../header/glass.css'
-import './dark.css'
 
 export default function DarkHeader() {
 
