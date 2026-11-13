@@ -23,31 +23,6 @@
 ## ESTRUTURA
 
 
-RUNDEX/
-├── BACK/
-│   ├── app/
-│   │   ├── config.py          # Configurações e caminhos
-│   │   ├── main.py            # Aplicação FastAPI e CORS
-│   │   └── schemas.py
-│   ├── database/
-│   │   ├── JSON/
-│   │   │   └── pokemon.json   # Catálogo de reserva
-│   │   ├── SQL/
-│   │   │   └── pokemon.sql
-│   │   └── pokemon.py         # Geração de dados a partir da RAWG
-│   ├── routes/
-│   │   └── home.py            # Listagem, busca, destaques e imagens
-│   └── services/
-│       ├── connect.py         # Conexão e inicialização do PostgreSQL
-│       └── rawg.py            # Cliente da RAWG API
-├── FRONT/
-│   └── RUNDEX/
-│       ├── app/
-│       │   ├── components/   # Cabeçalho e rodapé
-│       │   └── home/         # Página inicial e estilos
-│       ├── public/           # Imagens e arquivos estáticos
-│       └── package.json
-└── README.md
 
 
 ### COMO COLOCAR O BACK P RODAR
