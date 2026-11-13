@@ -22,7 +22,7 @@ INSERT INTO public.pokemon (
 )
 VALUES
     ('Pokémon Red', 'pokemon-red', 'Pokémon', '["Game Boy", "Nintendo 3DS"]', '["Nintendo"]', 'https://i.postimg.cc/jj0SwJmv/RED.png', 'NO', DATE '1996-02-27'),
-    ('Pokémon Green', 'pokemon-green', 'Pokémon', '["Game Boy", "Game Boy Color", "Game Boy Advance"]', '["Nintendo"]', 'https://i.postimg.cc/8JkvMpc7/GREEN.png', 'NO', DATE '1996-02-27'),
+    ('Pokémon Green', 'pokemon-green', 'Pokémon', '["Game Boy", "Game Boy Color", "Game Boy Advance"]', '["Nintendo"]', 'https://i.postimg.cc/SsCG0jpf/GREEN.png', 'NO', DATE '1996-02-27'),
     ('Pokémon Blue', 'pokemon-blue', 'Pokémon', '["Game Boy", "Nintendo 3DS"]', '["Nintendo"]', 'https://i.postimg.cc/q7sM8vdy/BLUE.png', 'NO', DATE '1996-10-15'),
     ('Pokémon Yellow', 'pokemon-yellow', 'Pokémon', '["Game Boy", "Nintendo 3DS"]', '["Nintendo"]', 'https://i.postimg.cc/k5QXxgdg/YELLOW.png', 'NO', DATE '1998-09-12'),
     ('Pokémon Gold', 'pokemon-gold', 'Pokémon', '["Game Boy", "Game Boy Color", "Nintendo 3DS"]', '["Nintendo"]', 'https://i.postimg.cc/VNqLjkcC/GOLD.png', 'NO', DATE '1999-11-21'),
@@ -48,16 +48,16 @@ VALUES
     ('Pokémon Alpha Sapphire', 'pokemon-alpha-sapphire', 'Pokémon', '["Nintendo 3DS"]', '["Nintendo"]', 'https://i.postimg.cc/d0PVkTp5/AFPHA-SAPPHIRE.png', 'YES', DATE '2014-11-21'),
     ('Pokémon Sun', 'pokemon-sun', 'Pokémon', '["Nintendo 3DS"]', '["Nintendo"]', 'https://i.postimg.cc/SxzKxGTV/SUN.png', 'NO', DATE '2016-11-18'),
     ('Pokémon Moon', 'pokemon-moon', 'Pokémon', '["Nintendo 3DS"]', '["Nintendo"]', 'https://i.postimg.cc/t4Vg4zSk/MOON.png', 'NO', DATE '2016-11-18'),
-    ('Pokémon Ultra Sun', 'pokemon-ultra-sun', 'Pokémon', '["Nintendo 3DS"]', '["Nintendo"]', 'https://i.postimg.cc/Z9x3WBTy/ULTRA-SUN.png', 'YES', DATE '2017-11-17'),
+    ('Pokémon Ultra Sun', 'pokemon-ultra-sun', 'Pokémon', '["Nintendo 3DS"]', '["Nintendo"]', 'https://i.postimg.cc/GpZjSGVz/ULTRA-SUN.png', 'YES', DATE '2017-11-17'),
     ('Pokémon Ultra Moon', 'pokemon-ultra-moon', 'Pokémon', '["Nintendo 3DS"]', '["Nintendo"]', 'https://i.postimg.cc/Bn1vnCYC/ULTRA-MOON.png', 'YES', DATE '2017-11-17'),
-    ('Pokémon Let''s Go, Pikachu!', 'pokemon-let-s-go-pikachu', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/t1jWRtHz/LET-S-GO-PIKACHU.jpg', 'YES', DATE '2018-11-16'),
-    ('Pokémon Let''s Go, Eevee!', 'pokemon-let-s-go-eevee', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/cKBYvgsY/LET-S-GO-EEVEE.jpg', 'YES', DATE '2018-11-16'),
-    ('Pokémon Sword', 'pokemon-sword', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/bDYnkyJB/SWORD.png', 'NO', DATE '2019-11-15'),
-    ('Pokémon Shield', 'pokemon-shield', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/Lq3fJYHj/SHIELD.png', 'NO', DATE '2019-11-15'),
-    ('Pokémon Brilliant Diamond', 'pokemon-brilliant-diamond', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/MMZBV6Tr/BRILIANT-DIAMOND.png', 'YES', DATE '2021-11-19'),
-    ('Pokémon Shining Pearl', 'pokemon-shining-pearl', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/TyJmKLRs/SHINING-PEARL.png', 'YES', DATE '2021-11-19'),
-    ('Pokémon Scarlet', 'pokemon-scarlet', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/jwqfPx5p/SCARLET.png', 'NO', DATE '2022-11-18'),
-    ('Pokémon Violet', 'pokemon-violet', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/sQfW7jxf/VIOLET.png', 'NO', DATE '2022-11-18')
+    ('Pokémon Let''s Go, Pikachu!', 'pokemon-let-s-go-pikachu', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/6Q700YjF/LET-S-GO-PIKACHU.jpg', 'YES', DATE '2018-11-16'),
+    ('Pokémon Let''s Go, Eevee!', 'pokemon-let-s-go-eevee', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/W4Q7fgC9/LET-S-GO-EEVEE.jpg', 'YES', DATE '2018-11-16'),
+    ('Pokémon Sword', 'pokemon-sword', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/V6nFy5cm/SWORD.png', 'NO', DATE '2019-11-15'),
+    ('Pokémon Shield', 'pokemon-shield', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/6QDh1ngb/SHIELD.png', 'NO', DATE '2019-11-15'),
+    ('Pokémon Brilliant Diamond', 'pokemon-brilliant-diamond', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/HxXtGjCH/BRILIANT-DIAMOND.png', 'YES', DATE '2021-11-19'),
+    ('Pokémon Shining Pearl', 'pokemon-shining-pearl', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/W4Q7fgxs/SHINING-PEARL.png', 'YES', DATE '2021-11-19'),
+    ('Pokémon Scarlet', 'pokemon-scarlet', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/sX7JF1Rg/SCARLET.png', 'NO', DATE '2022-11-18'),
+    ('Pokémon Violet', 'pokemon-violet', 'Pokémon', '["Nintendo Switch"]', '["Nintendo"]', 'https://i.postimg.cc/0QDCgrqS/VIOLET.png', 'NO', DATE '2022-11-18')
 ON CONFLICT (slug) DO UPDATE SET
     nome = EXCLUDED.nome,
     franchise = EXCLUDED.franchise,

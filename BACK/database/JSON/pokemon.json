@@ -15,7 +15,7 @@
     "franchise": "Pokémon",
     "plataforms": ["Game Boy", "Game Boy Color", "Game Boy Advance"],
     "parent_plataforms": ["Nintendo"],
-    "image": "https://i.postimg.cc/8JkvMpc7/GREEN.png",
+    "image": "https://i.postimg.cc/SsCG0jpf/GREEN.png",
     "remake": "NO",
     "release_date": "1996-02-27"
   },
@@ -275,7 +275,7 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
-    "image": "https://i.postimg.cc/Z9x3WBTy/ULTRA-SUN.png",
+    "image": "https://i.postimg.cc/GpZjSGVz/ULTRA-SUN.png",
     "remake": "YES",
     "release_date": "2017-11-17"
   },
@@ -295,7 +295,7 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": "https://i.postimg.cc/t1jWRtHz/LET-S-GO-PIKACHU.jpg",
+    "image": "https://i.postimg.cc/6Q700YjF/LET-S-GO-PIKACHU.jpg",
     "remake": "YES",
     "release_date": "2018-11-16"
   },
@@ -305,7 +305,7 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": "https://i.postimg.cc/cKBYvgsY/LET-S-GO-EEVEE.jpg",
+    "image": "https://i.postimg.cc/W4Q7fgC9/LET-S-GO-EEVEE.jpg",
     "remake": "YES",
     "release_date": "2018-11-16"
   },
@@ -315,7 +315,7 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": "https://i.postimg.cc/bDYnkyJB/SWORD.png",
+    "image": "https://i.postimg.cc/V6nFy5cm/SWORD.png",
     "remake": "NO",
     "release_date": "2019-11-15"
   },
@@ -325,7 +325,7 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": "https://i.postimg.cc/Lq3fJYHj/SHIELD.png",
+    "image": "https://i.postimg.cc/6QDh1ngb/SHIELD.png",
     "remake": "NO",
     "release_date": "2019-11-15"
   },
@@ -335,7 +335,7 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": "https://i.postimg.cc/MMZBV6Tr/BRILIANT-DIAMOND.png",
+    "image": "https://i.postimg.cc/HxXtGjCH/BRILIANT-DIAMOND.png",
     "remake": "YES",
     "release_date": "2021-11-19"
   },
@@ -345,7 +345,7 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": "https://i.postimg.cc/TyJmKLRs/SHINING-PEARL.png",
+    "image": "https://i.postimg.cc/W4Q7fgxs/SHINING-PEARL.png",
     "remake": "YES",
     "release_date": "2021-11-19"
   },
@@ -355,7 +355,7 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": "https://i.postimg.cc/jwqfPx5p/SCARLET.png",
+    "image": "https://i.postimg.cc/sX7JF1Rg/SCARLET.png",
     "remake": "NO",
     "release_date": "2022-11-18"
   },
@@ -365,7 +365,7 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": "https://i.postimg.cc/sQfW7jxf/VIOLET.png",
+    "image": "https://i.postimg.cc/0QDCgrqS/VIOLET.png",
     "remake": "NO",
     "release_date": "2022-11-18"
   }
