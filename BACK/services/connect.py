@@ -7,21 +7,47 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 from dotenv import load_dotenv
 
-from app.config import ENV_FILE
+from app.config import DATABASE_DIR, ENV_FILE
 
 
 @asynccontextmanager
 async def lifespan(app):
+    load_dotenv(ENV_FILE, encoding="utf-8-sig")
+
     try:
-        start_postgres()
-        with connect():
+        if not os.getenv("DATABASE_URL"):
+            start_postgres()
+
+        with connect() as connection:
+            initialize_database(connection)
             logging.getLogger("uvicorn.error").info("PostgreSQL conectado.")
-    except (psycopg.Error, OSError, subprocess.SubprocessError, RuntimeError) as error:
+
+    except (
+        KeyError,
+        psycopg.Error,
+        OSError,
+        subprocess.SubprocessError,
+        RuntimeError,
+    ) as error:
         logging.getLogger("uvicorn.error").warning(
             "PostgreSQL indisponivel (%s); FastAPI iniciando com o JSON de reserva.",
             error,
         )
+
     yield
+
+
+def initialize_database(connection: psycopg.Connection) -> None:
+    result = connection.execute(
+        "SELECT to_regclass('public.pokemon')"
+    ).fetchone()
+
+    if result and result[0] is not None:
+        return
+
+    sql_file = DATABASE_DIR / "SQL" / "pokemon.sql"
+    sql = sql_file.read_text(encoding="utf-8")
+    connection.execute(sql)
 
 
 def start_postgres():
@@ -61,6 +87,15 @@ def start_postgres():
 def connect() -> psycopg.Connection:
     load_dotenv(ENV_FILE, encoding="utf-8-sig")
 
+    database_url = os.getenv("DATABASE_URL")
+
+    if database_url:
+        return psycopg.connect(
+            database_url,
+            connect_timeout=5,
+            autocommit=True,
+        )
+
     return psycopg.connect(
         host=os.environ["DB_HOST"],
         port=os.environ["DB_PORT"],
@@ -70,5 +105,4 @@ def connect() -> psycopg.Connection:
         connect_timeout=5,
         autocommit=True,
     )
-
 
