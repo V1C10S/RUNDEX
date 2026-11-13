@@ -7,6 +7,7 @@ import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import Header from "../CNPJ/dark/dark";
 import Footer from "../CNPJ/footer/footer";
 import Filter from "../CNPJ/filter/filter";
+import { apiFetch, apiUrl } from "../fetch/api";
 
 import "./background.css";
 import "./hero.css";
@@ -47,7 +48,7 @@ export default function JogosPage() {
     useEffect(() => {
         const controller = new AbortController();
 
-        fetch("http://localhost:5500/jogos/pokemon", { signal: controller.signal })
+        apiFetch("/jogos/pokemon", { signal: controller.signal })
             .then((resposta) => {
                 if (!resposta.ok) throw new Error(`Erro HTTP ${resposta.status}`);
                 return resposta.json();
@@ -216,7 +217,7 @@ export default function JogosPage() {
                                         {jogo.image && (
                                             <Image
                                                 className="cartao-imagem"
-                                                src={jogo.image}
+                                                src={apiUrl(jogo.image)}
                                                 alt=""
                                                 fill
                                                 sizes="550px"

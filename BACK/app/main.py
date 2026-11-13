@@ -3,6 +3,7 @@ import uvicorn
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from repository.api import router as api_router
 from services.connect import lifespan
 
 
@@ -22,18 +23,10 @@ app.add_middleware(
 )
 
 
-# ===== IMPORTS =====
-
-
-from routes.home import router as home_router
-from routes.jogos import router as jogos_router
-
-
 # ===== ROUTERS =====
 
 
-app.include_router(home_router)
-app.include_router(jogos_router)
+app.include_router(api_router)
 
 
 # ===== CHECKING =====

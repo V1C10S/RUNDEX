@@ -140,7 +140,7 @@ def list_featured(request: Request):
         with_images = {row[0] for row in rows}
         for game in featured:
             if game["slug"] in with_images:
-                game["image"] = str(request.url_for("pokemon_image", slug=game["slug"]))
+                game["image"] = str(request.app.url_path_for("pokemon_image", slug=game["slug"]))
     except psycopg.Error as error:
         logging.getLogger("uvicorn.error").warning(
             "Falha ao verificar imagens no PostgreSQL: %s", error

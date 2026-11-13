@@ -65,3 +65,13 @@ python -m uvicorn app.main:app --reload --port 5500
 - cd RUNDEX
 
 npm.cmd run dev
+
+### ENDEREÇO DA API
+
+O front chama o FastAPI por `/api`, incluindo as capas servidas pelo back-end. O Next encaminha essas chamadas para o endereço definido em `API_URL`.
+
+O arquivo `BACK/repository/api.py` reúne as rotas de Home, Jogos e Catálogo. Com os dois servidores ligados, use `http://localhost:3000/api/health` para conferir o encaminhamento.
+
+- **Local:** o endereço padrão é `http://localhost:5500`. Para usar outro, defina `API_URL` em `FRONT/RUNDEX/.env.local` e reinicie o Next.
+- **Vercel:** defina `API_URL` em **Settings → Environment Variables** com a URL HTTPS do FastAPI publicado, por exemplo `https://api.seudominio.com`. Faça um novo deploy do front para aplicar o valor.
+- **Outro host com Next.js:** defina `API_URL` no ambiente do front antes de rodar `npm run build`. O host precisa servir a aplicação Next para encaminhar `/api`.

@@ -69,7 +69,7 @@ def list_games(request: Request):
         for game in games:
             if game["slug"] in with_images:
                 game["image"] = str(
-                    request.url_for("jogos_pokemon_image", slug=game["slug"])
+                    request.app.url_path_for("jogos_pokemon_image", slug=game["slug"])
                 )
     except psycopg.Error as error:
         logging.getLogger("uvicorn.error").warning(

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 import Header from "../header/header";
 import Footer from "../footer/footer";
+import { apiFetch, apiUrl } from "../../fetch/api";
 import "../../home/letter.css";
 import "./catalog.css";
 import "./letter.css";
@@ -39,7 +40,7 @@ export default function Catalog() {
     useEffect(() => {
         const controller = new AbortController();
 
-        fetch(`http://localhost:5500/jogos/catalogo/${encodeURIComponent(secao)}`, {
+        apiFetch(`/jogos/catalogo/${encodeURIComponent(secao)}`, {
             signal: controller.signal,
         })
             .then((resposta) => {
@@ -114,7 +115,7 @@ export default function Catalog() {
                                     {jogo.image && (
                                         <Image
                                             className="catalog-cover"
-                                            src={jogo.image}
+                                            src={apiUrl(jogo.image)}
                                             alt=""
                                             fill
                                             unoptimized/>

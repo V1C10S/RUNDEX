@@ -5,6 +5,7 @@ import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 
 import Header from "../CNPJ/header/header";
 import Footer from "../CNPJ/footer/footer";
+import { apiFetch, apiUrl } from "../fetch/api";
 
 import './background.css'
 import './hero.css'
@@ -35,7 +36,7 @@ export default function HomePage() {
     useEffect(() => {
         const controller = new AbortController();
 
-        fetch("http://localhost:5500/home/destaques", { signal: controller.signal })
+        apiFetch("/home/destaques", { signal: controller.signal })
             .then((resposta) => {
                 if (!resposta.ok) throw new Error(`Erro HTTP ${resposta.status}`);
                 return resposta.json();
@@ -59,7 +60,7 @@ export default function HomePage() {
         const controller = new AbortController();
         const timeout = setTimeout(() => {
             const params = new URLSearchParams({ q: query });
-            fetch(`http://localhost:5500/home/search?${params}`, {
+            apiFetch(`/home/search?${params}`, {
                 signal: controller.signal,
             })
                 .then((resposta) => {
@@ -163,11 +164,6 @@ export default function HomePage() {
             <section className="header">
                 <Header/>
             </section>
-
-
-
-
-
 
 
             <section className="hero">
@@ -309,8 +305,6 @@ export default function HomePage() {
             </section>
 
 
-
-
             <section className="cards">
                 <div className="cards-content">
                     <div className="cards-heading">
@@ -350,7 +344,7 @@ export default function HomePage() {
                                         <div className="card-image">
                                             {card.jogo?.image && (
                                                 <Image
-                                                    src={card.jogo.image}
+                                                    src={apiUrl(card.jogo.image)}
                                                     alt={card.jogo.name}
                                                     width={550}
                                                     height={496}
@@ -389,10 +383,6 @@ export default function HomePage() {
                         </div>                   
                     </div>
             </section>
-
-
-
-
 
 
             <section className="footer-container">
