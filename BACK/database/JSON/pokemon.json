@@ -6,7 +6,8 @@
     "plataforms": ["Game Boy", "Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/jj0SwJmv/RED.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "1996-02-27"
   },
   {
     "nome": "Pokémon Green",
@@ -14,8 +15,9 @@
     "franchise": "Pokémon",
     "plataforms": ["Game Boy", "Game Boy Color", "Game Boy Advance"],
     "parent_plataforms": ["Nintendo"],
-    "image": null,
-    "remake": "NO"
+    "image": "https://i.postimg.cc/8JkvMpc7/GREEN.png",
+    "remake": "NO",
+    "release_date": "1996-02-27"
   },
   {
     "nome": "Pokémon Blue",
@@ -24,7 +26,8 @@
     "plataforms": ["Game Boy", "Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/q7sM8vdy/BLUE.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "1996-10-15"
   },
   {
     "nome": "Pokémon Yellow",
@@ -33,7 +36,8 @@
     "plataforms": ["Game Boy", "Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/k5QXxgdg/YELLOW.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "1998-09-12"
   },
   {
     "nome": "Pokémon Gold",
@@ -42,25 +46,28 @@
     "plataforms": ["Game Boy", "Game Boy Color", "Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/VNqLjkcC/GOLD.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "1999-11-21"
   },
   {
     "nome": "Pokémon Silver",
     "slug": "pokemon-silver",
     "franchise": "Pokémon",
-    "plataforms": ["Nintendo 3DS", "Game Boy", "Game Boy Color"],
+    "plataforms": ["Game Boy", "Game Boy Color", "Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/BvTQxnGD/SILVER.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "1999-11-21"
   },
   {
     "nome": "Pokémon Crystal",
     "slug": "pokemon-crystal",
     "franchise": "Pokémon",
-    "plataforms": ["Nintendo 3DS", "Game Boy Color"],
+    "plataforms": ["Game Boy Color", "Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/8CRPhzVh/CRYSTAL.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2000-12-14"
   },
   {
     "nome": "Pokémon Ruby",
@@ -69,7 +76,8 @@
     "plataforms": ["Game Boy Advance"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/BvTQxnGP/RUBY.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2002-11-21"
   },
   {
     "nome": "Pokémon Sapphire",
@@ -78,7 +86,8 @@
     "plataforms": ["Game Boy Advance"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/wBXThjd7/SAPPHIRE.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2002-11-21"
   },
   {
     "nome": "Pokémon Emerald",
@@ -87,25 +96,28 @@
     "plataforms": ["Game Boy Advance"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/JhN4bzW7/EMERALD.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2004-09-16"
   },
   {
-    "nome": "Pokémon FireRed",
-    "slug": "pokemon-firered",
+    "nome": "Pokémon Fire Red",
+    "slug": "pokemon-fire-red",
     "franchise": "Pokémon",
     "plataforms": ["Game Boy Advance"],
     "parent_plataforms": ["Nintendo"],
     "image": null,
-    "remake": "YES"
+    "remake": "YES",
+    "release_date": "2004-01-29"
   },
   {
-    "nome": "Pokémon LeafGreen",
-    "slug": "pokemon-leafgreen",
+    "nome": "Pokémon Leaf Green",
+    "slug": "pokemon-leaf-green",
     "franchise": "Pokémon",
     "plataforms": ["Game Boy Advance"],
     "parent_plataforms": ["Nintendo"],
     "image": null,
-    "remake": "YES"
+    "remake": "YES",
+    "release_date": "2004-01-29"
   },
   {
     "nome": "Pokémon Diamond",
@@ -114,7 +126,8 @@
     "plataforms": ["Nintendo DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/jjHdzSrx/DIAMOND.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2006-09-28"
   },
   {
     "nome": "Pokémon Pearl",
@@ -123,7 +136,8 @@
     "plataforms": ["Nintendo DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/wBXThjd6/PEARL.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2006-09-28"
   },
   {
     "nome": "Pokémon Platinum",
@@ -132,25 +146,28 @@
     "plataforms": ["Nintendo DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/W4GbM1Pc/PLATINUM.png",
-    "remake": "YES"
+    "remake": "YES",
+    "release_date": "2008-09-13"
   },
   {
-    "nome": "Pokémon HeartGold",
-    "slug": "pokemon-heartgold",
+    "nome": "Pokémon Heart Gold",
+    "slug": "pokemon-heart-gold",
     "franchise": "Pokémon",
     "plataforms": ["Nintendo DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/KYPvn8yF/HEART-GOLD.png",
-    "remake": "YES"
+    "remake": "YES",
+    "release_date": "2009-09-12"
   },
   {
-    "nome": "Pokémon SoulSilver",
-    "slug": "pokemon-soulsilver",
+    "nome": "Pokémon Soul Silver",
+    "slug": "pokemon-soul-silver",
     "franchise": "Pokémon",
     "plataforms": ["Nintendo DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/9fdFGQjh/SOUL-SILVER.png",
-    "remake": "YES"
+    "remake": "YES",
+    "release_date": "2009-09-12"
   },
   {
     "nome": "Pokémon Black",
@@ -159,7 +176,8 @@
     "plataforms": ["Nintendo DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/hGWtz7Nc/BLACK.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2010-09-18"
   },
   {
     "nome": "Pokémon White",
@@ -168,7 +186,8 @@
     "plataforms": ["Nintendo DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/5tBNw2Mc/WHITE.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2010-09-18"
   },
   {
     "nome": "Pokémon Black 2",
@@ -177,7 +196,8 @@
     "plataforms": ["Nintendo DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/CKTxBf90/BLACK-2.png",
-    "remake": "YES"
+    "remake": "YES",
+    "release_date": "2012-06-23"
   },
   {
     "nome": "Pokémon White 2",
@@ -186,7 +206,8 @@
     "plataforms": ["Nintendo DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/JhVzDBSW/WHITE-2.png",
-    "remake": "YES"
+    "remake": "YES",
+    "release_date": "2012-06-23"
   },
   {
     "nome": "Pokémon X",
@@ -195,7 +216,8 @@
     "plataforms": ["Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/Bv9nL1Rf/X.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2013-10-12"
   },
   {
     "nome": "Pokémon Y",
@@ -204,7 +226,8 @@
     "plataforms": ["Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/25RSbBMc/Y.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2013-10-12"
   },
   {
     "nome": "Pokémon Omega Ruby",
@@ -213,7 +236,8 @@
     "plataforms": ["Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/bvcwD2W6/OMEGA-RUBY.png",
-    "remake": "YES"
+    "remake": "YES",
+    "release_date": "2014-11-21"
   },
   {
     "nome": "Pokémon Alpha Sapphire",
@@ -222,7 +246,8 @@
     "plataforms": ["Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/d0PVkTp5/AFPHA-SAPPHIRE.png",
-    "remake": "YES"
+    "remake": "YES",
+    "release_date": "2014-11-21"
   },
   {
     "nome": "Pokémon Sun",
@@ -231,7 +256,8 @@
     "plataforms": ["Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/SxzKxGTV/SUN.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2016-11-18"
   },
   {
     "nome": "Pokémon Moon",
@@ -240,7 +266,8 @@
     "plataforms": ["Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/t4Vg4zSk/MOON.png",
-    "remake": "NO"
+    "remake": "NO",
+    "release_date": "2016-11-18"
   },
   {
     "nome": "Pokémon Ultra Sun",
@@ -248,8 +275,9 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
-    "image": "https://i.postimg.cc/SxzKxGTg/ULTRA-SUN.png",
-    "remake": "YES"
+    "image": "https://i.postimg.cc/Z9x3WBTy/ULTRA-SUN.png",
+    "remake": "YES",
+    "release_date": "2017-11-17"
   },
   {
     "nome": "Pokémon Ultra Moon",
@@ -258,7 +286,8 @@
     "plataforms": ["Nintendo 3DS"],
     "parent_plataforms": ["Nintendo"],
     "image": "https://i.postimg.cc/Bn1vnCYC/ULTRA-MOON.png",
-    "remake": "YES"
+    "remake": "YES",
+    "release_date": "2017-11-17"
   },
   {
     "nome": "Pokémon Let's Go, Pikachu!",
@@ -266,8 +295,9 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": null,
-    "remake": "YES"
+    "image": "https://i.postimg.cc/t1jWRtHz/LET-S-GO-PIKACHU.jpg",
+    "remake": "YES",
+    "release_date": "2018-11-16"
   },
   {
     "nome": "Pokémon Let's Go, Eevee!",
@@ -275,8 +305,9 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": null,
-    "remake": "YES"
+    "image": "https://i.postimg.cc/cKBYvgsY/LET-S-GO-EEVEE.jpg",
+    "remake": "YES",
+    "release_date": "2018-11-16"
   },
   {
     "nome": "Pokémon Sword",
@@ -284,8 +315,9 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": null,
-    "remake": "NO"
+    "image": "https://i.postimg.cc/bDYnkyJB/SWORD.png",
+    "remake": "NO",
+    "release_date": "2019-11-15"
   },
   {
     "nome": "Pokémon Shield",
@@ -293,8 +325,9 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": null,
-    "remake": "NO"
+    "image": "https://i.postimg.cc/Lq3fJYHj/SHIELD.png",
+    "remake": "NO",
+    "release_date": "2019-11-15"
   },
   {
     "nome": "Pokémon Brilliant Diamond",
@@ -302,8 +335,9 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": null,
-    "remake": "YES"
+    "image": "https://i.postimg.cc/MMZBV6Tr/BRILIANT-DIAMOND.png",
+    "remake": "YES",
+    "release_date": "2021-11-19"
   },
   {
     "nome": "Pokémon Shining Pearl",
@@ -311,8 +345,9 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": null,
-    "remake": "YES"
+    "image": "https://i.postimg.cc/TyJmKLRs/SHINING-PEARL.png",
+    "remake": "YES",
+    "release_date": "2021-11-19"
   },
   {
     "nome": "Pokémon Scarlet",
@@ -320,8 +355,9 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": null,
-    "remake": "NO"
+    "image": "https://i.postimg.cc/jwqfPx5p/SCARLET.png",
+    "remake": "NO",
+    "release_date": "2022-11-18"
   },
   {
     "nome": "Pokémon Violet",
@@ -329,7 +365,8 @@
     "franchise": "Pokémon",
     "plataforms": ["Nintendo Switch"],
     "parent_plataforms": ["Nintendo"],
-    "image": null,
-    "remake": "NO"
+    "image": "https://i.postimg.cc/sQfW7jxf/VIOLET.png",
+    "remake": "NO",
+    "release_date": "2022-11-18"
   }
 ]
