@@ -35,7 +35,7 @@ VALUES
     ('Pokémon Leaf Green', 'pokemon-leaf-green', 'Pokémon', '["Game Boy Advance"]', '["Nintendo"]', NULL, 'YES', DATE '2004-01-29'),
     ('Pokémon Diamond', 'pokemon-diamond', 'Pokémon', '["Nintendo DS"]', '["Nintendo"]', 'https://i.postimg.cc/jjHdzSrx/DIAMOND.png', 'NO', DATE '2006-09-28'),
     ('Pokémon Pearl', 'pokemon-pearl', 'Pokémon', '["Nintendo DS"]', '["Nintendo"]', 'https://i.postimg.cc/wBXThjd6/PEARL.png', 'NO', DATE '2006-09-28'),
-    ('Pokémon Platinum', 'pokemon-platinum', 'Pokémon', '["Nintendo DS"]', '["Nintendo"]', 'https://i.postimg.cc/W4GbM1Pc/PLATINUM.png', 'YES', DATE '2008-09-13'),
+    ('Pokémon Platinum', 'pokemon-platinum', 'Pokémon', '["Nintendo DS"]', '["Nintendo"]', 'https://i.postimg.cc/W4GbM1Pc/PLATINUM.png', 'NO', DATE '2008-09-13'),
     ('Pokémon Heart Gold', 'pokemon-heart-gold', 'Pokémon', '["Nintendo DS"]', '["Nintendo"]', 'https://i.postimg.cc/KYPvn8yF/HEART-GOLD.png', 'YES', DATE '2009-09-12'),
     ('Pokémon Soul Silver', 'pokemon-soul-silver', 'Pokémon', '["Nintendo DS"]', '["Nintendo"]', 'https://i.postimg.cc/9fdFGQjh/SOUL-SILVER.png', 'YES', DATE '2009-09-12'),
     ('Pokémon Black', 'pokemon-black', 'Pokémon', '["Nintendo DS"]', '["Nintendo"]', 'https://i.postimg.cc/hGWtz7Nc/BLACK.png', 'NO', DATE '2010-09-18'),
