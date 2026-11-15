@@ -20,6 +20,12 @@ async def lifespan(app):
 
         with connect() as connection:
             initialize_database(connection)
+            guias_sql = DATABASE_DIR / "SQL" / "detonados" / "detonados.sql"
+            connection.execute(guias_sql.read_text(encoding="utf-8"))
+            builds_sql = DATABASE_DIR / "SQL" / "builds" / "builds.sql"
+            connection.execute(builds_sql.read_text(encoding="utf-8"))
+            game_sql = DATABASE_DIR / "SQL" / "game" / "game.sql"
+            connection.execute(game_sql.read_text(encoding="utf-8"))
             logging.getLogger("uvicorn.error").info("PostgreSQL conectado.")
 
     except (

@@ -7,8 +7,7 @@
   display: inline-block;
 }
 
-/* Até 25 caracteres do nome completo, incluindo pontuação e sem contar espaços. */
-:is(.card-1, .card-2, .card-3):hover .card-name-letter[data-letter] {
+:is(.card-1, .card-2, .card-3):is(:hover, :focus-visible) .card-name-letter[data-letter] {
   animation-name: card-name-jump;
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
@@ -115,6 +114,10 @@
   animation-delay: 12s;
 }
 
+.card-name-letter[data-letter="26"] {
+  animation-delay: 12.5s;
+}
+
 @keyframes card-name-jump {
   0%, 100% {
     transform: translateY(0) rotate(0) scale(1);
@@ -134,7 +137,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :is(.card-1, .card-2, .card-3):hover .card-name-letter[data-letter] {
+  :is(.card-1, .card-2, .card-3):is(:hover, :focus-visible) .card-name-letter[data-letter] {
     animation: none;
   }
 }

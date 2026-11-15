@@ -62,13 +62,12 @@
     opacity: 0.7;
 }
 
-.catalog-card:hover {
+.catalog-card:is(:hover, :focus-visible) {
     border-width: 1.5px;
 }
 
 .catalog-card:focus-visible {
-    outline: 2px solid #65e6c2;
-    outline-offset: 4px;
+    outline: none;
 }
 
 .catalog-cover {

@@ -1,0 +1,56 @@
+.rollback-link {
+    display: inline-grid;
+    place-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 999px;
+}
+
+.rollback-link img,
+.rollback-link::after {
+    grid-area: 1 / 1;
+    width: 80px;
+    height: 80px;
+    transform: scale(1);
+}
+
+.rollback-link img {
+    filter: brightness(0) invert(1);
+}
+
+.rollback-link::after {
+    content: "";
+    background-color: #65e6c2;
+    mask: url("/icons/rollback.png") center / contain no-repeat;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.rollback-link:is(:hover, :focus-visible) img {
+    opacity: 0;
+}
+
+.rollback-link:is(:hover, :focus-visible)::after {
+    opacity: 1;
+}
+
+.rollback-link:focus-visible {
+    outline: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .rollback-link:active img,
+    .rollback-link:active::after {
+        animation: rollback-pulse 240ms ease-in-out;
+    }
+}
+
+@keyframes rollback-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}

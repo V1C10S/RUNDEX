@@ -164,7 +164,9 @@ def pokemon_image(slug: str):
                 (slug,),
             ).fetchone()
         if row is not None and row[0] is not None:
-            return Response(content=bytes(row[0]), media_type="image/png")
+            image = bytes(row[0])
+            media_type = "image/jpeg" if image.startswith(b"\xff\xd8\xff") else "image/png"
+            return Response(content=image, media_type=media_type)
     except psycopg.Error as error:
         unavailable = True
         logging.getLogger("uvicorn.error").warning(

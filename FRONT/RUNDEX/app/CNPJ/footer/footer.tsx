@@ -4,7 +4,9 @@ import "./footer.css";
 
 export default function Footer() {
     return (
+
         <footer className="footer">
+            
             <div className="footer-content">
                 <div className="footer-box">
                     <div className="footer-item footer-brand">
@@ -35,6 +37,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
+
         </footer>
     );
 }

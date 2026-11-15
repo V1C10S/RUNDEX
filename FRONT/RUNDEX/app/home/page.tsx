@@ -1,11 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 
 import Header from "../CNPJ/header/header";
 import Footer from "../CNPJ/footer/footer";
 import { apiFetch, apiUrl } from "../fetch/api";
+import { arrowTop, arrowDown, hasModifier } from "../CNPJ/key";
 
 import './background.css'
 import './hero.css'
@@ -24,6 +27,7 @@ type Jogo = {
 };
 
 export default function HomePage() {
+    const router = useRouter();
 
     const [search, setSearch] = useState("");
     const [jogos, setJogos] = useState<Jogo[]>([]);
@@ -32,6 +36,9 @@ export default function HomePage() {
     const [activesugests, setActiveSugests] = useState(-1);
     const sugestsVisible = viewsugests && jogos.length > 0;
     const suggestionsRef = useRef<HTMLUListElement>(null);
+    const headerRef = useRef<HTMLElement>(null);
+    const searchRef = useRef<HTMLInputElement>(null);
+    const cardsRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const controller = new AbortController();
@@ -100,8 +107,13 @@ export default function HomePage() {
         setJogos([]);
         setViewSugests(false);
         setActiveSugests(-1);
+        router.push(`/jogos?jogo=${encodeURIComponent(jogo.slug)}#catalogo`);
     }
 
+    function submitSearch() {
+        const jogo = jogos[activesugests] ?? jogos[0];
+        if (jogo) selectGame(jogo);
+    }
 
     const cards = [0, 1, 2].map((index) => {
         const jogo = destaques[index];
@@ -130,14 +142,13 @@ export default function HomePage() {
             return;
         }
 
-        if (jogos.length === 0) return;
+        if (hasModifier(event) || !sugestsVisible) return;
 
-        if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        if (arrowDown(event) || arrowTop(event)) {
             event.preventDefault();
-            setViewSugests(true);
 
             setActiveSugests((current) =>
-                event.key === "ArrowDown"
+                arrowDown(event)
                     ? (current + 1) % jogos.length
                     : current <= 0
                         ? jogos.length - 1
@@ -145,23 +156,18 @@ export default function HomePage() {
             );
         } else if (
             event.key === "Enter" &&
-            sugestsVisible &&
-            activesugests >= 0
+            sugestsVisible
         ) {
             event.preventDefault();
-            selectGame(jogos[activesugests]);
+            submitSearch();
         }
     }
+
 
     return (
         <main className="background">
         
-
-
-
-
-
-            <section className="header">
+            <section className="header" ref={headerRef}>
                 <Header/>
             </section>
 
@@ -248,13 +254,14 @@ export default function HomePage() {
                     <div className="hero-search-bar">
 
                         <input
+                        ref={searchRef}
                         type="search"
                         role="combobox"
                         aria-autocomplete="list"
                         aria-controls="game-titles"
-                        aria-expanded={viewsugests}
+                        aria-expanded={sugestsVisible}
                         aria-activedescendant={
-                            viewsugests && activesugests >= 0
+                            sugestsVisible && jogos[activesugests]
                                 ? `game-option-${jogos[activesugests].slug}`
                                 : undefined
                         }
@@ -300,7 +307,7 @@ export default function HomePage() {
                         )}
 
                     </div>
-                    <div className="hero-search-button"/>                      
+                    <button type="button" className="hero-search-button" aria-label="Buscar jogo" onClick={submitSearch}/>                      
                 </div>
             </section>
 
@@ -312,64 +319,73 @@ export default function HomePage() {
                         <span className="cards-title">DESTAQUES</span>
                     </div>
 
-                        <div className="cards-list">
-                            {cards.map((card) => (
-                                <div key={card.number} className={`card-${card.number}`}>
+                    <div className="cards-list" ref={cardsRef}>
+                        {cards.map((card) => {
+                            const jogo = card.jogo;
+                            const className = `card-${card.number}`;
 
-                                    {card.jogo && (
-                                        <h3 className="card-name" aria-label={card.jogo.name}>
-                                            {card.words.map((letters, wordIndex) => (
-                                                <span
-                                                    key={wordIndex}
-                                                    className="card-name-word"
-                                                    aria-hidden="true"
-                                                >
-                                                    {letters.map(({ letter, position }) => (
-                                                        <span
-                                                            key={position}
-                                                            className="card-name-letter"
-                                                            data-letter={
-                                                                position <= 25 ? position : undefined
-                                                            }
-                                                        >
-                                                            {letter}
-                                                        </span>
-                                                    ))}
-                                                </span>
-                                            ))}
-                                        </h3>
-                                    )}
+                            if (!jogo) {
+                                return <div key={card.number} className={className} aria-hidden="true"/>;
+                            }
+
+                            return (
+                                <Link
+                                    key={card.number}
+                                    className={className}
+                                    href={`/detonados/${encodeURIComponent(jogo.slug)}`}
+                                    aria-label={`Detonado de ${jogo.name}`}>
+                                    <h1 className="card-name" aria-label={jogo.name}>
+                                        {card.words.map((letters, wordIndex) => (
+                                            <span
+                                                key={wordIndex}
+                                                className="card-name-word"
+                                                aria-hidden="true">
+                                                {letters.map(({ letter, position }) => (
+
+                                                    <span
+                                                        key={position}
+                                                        className="card-name-letter"
+                                                        data-letter={
+                                                            position <= 26 ? position : undefined
+                                                        }>
+                                                                        
+                                                        {letter}
+                                                    </span>
+
+                                                ))}
+                                            </span>
+                                        ))}
+                                    </h1>
 
                                     <div className="card-top">
                                         <div className="card-image">
-                                            {card.jogo?.image && (
+                                            {jogo.image && (
                                                 <Image
-                                                    src={apiUrl(card.jogo.image)}
-                                                    alt={card.jogo.name}
+                                                    src={apiUrl(jogo.image)}
+                                                    alt=""
                                                     width={550}
                                                     height={496}
                                                     unoptimized/>
-                                                
                                             )}
                                         </div>
                                     </div>
 
                                     <div className="card-bottom">
                                         <div className="cardB-left">
-                                            <span className="card-number">
+                                            <span className="card-number" aria-hidden="true">
                                                 {String(card.number).padStart(2, "0")}
                                             </span>
                                         </div>
 
                                         <div className="cardB-right">
                                             <div className="card-badges">
-                                                {card.jogo?.platforms[0] && (
+                                                {jogo.platforms[0] && (
                                                     <span className="badge badge-platform">
-                                                        {card.jogo.platforms[0]}
+                                                        {jogo.platforms[0]}
                                                     </span>
                                                 )}
 
-                                                {card.jogo?.remake === "YES" && (
+                                                {jogo.remake === "YES" && (
                                                     <span className="badge badge-remake">
                                                         REMAKE
                                                     </span>
@@ -378,10 +394,11 @@ export default function HomePage() {
                                         </div>
                                     </div>
 
-                                </div>
-                            ))}
-                        </div>                   
+                                </Link>
+                            );
+                        })}
                     </div>
+                </div>
             </section>
 
 

@@ -47,21 +47,25 @@
 .card-1,
 .card-2,
 .card-3 {
+  display: block;
   position: relative;
   height: 800px;
   width: 550px;
   border: 1px solid rgba(242, 242, 242, 0.3);
   border-radius: 20px;
   overflow: hidden;
+  text-decoration: none;
   transition: transform 300ms ease;
 }
 
-.card-1:hover,
-.card-2:hover,
-.card-3:hover {
-  border:1px solid #65E6C2;
+:is(.card-1, .card-2, .card-3):is(:hover, :focus-visible) {
+  border-color: #65E6C2;
   transform: scale(1.05);
   opacity: 0.7;
+}
+
+:is(.card-1, .card-2, .card-3):focus-visible {
+  outline: 2px solid transparent;
 }
 
 .card-bottom {
@@ -95,9 +99,7 @@
   text-shadow: 0 2px 4px #000, 0 4px 12px #000;
 }
 
-.card-1:hover .card-name,
-.card-2:hover .card-name,
-.card-3:hover .card-name {
+:is(.card-1, .card-2, .card-3):is(:hover, :focus-visible) .card-name {
   visibility: visible;
 }
 
@@ -126,9 +128,7 @@
   gap: 8px;
 }
 
-.card-1:hover .card-badges,
-.card-2:hover .card-badges,
-.card-3:hover .card-badges {
+:is(.card-1, .card-2, .card-3):is(:hover, :focus-visible) .card-badges {
   visibility: visible;
 }
 
@@ -181,9 +181,7 @@
   transform:color 300ms ease;
 }
 
-.card-1:hover .card-number,
-.card-2:hover .card-number,
-.card-3:hover .card-number {
+:is(.card-1, .card-2, .card-3):is(:hover, :focus-visible) .card-number {
   visibility: visible;
   color: #65E6C2;
   -webkit-text-stroke: 0;

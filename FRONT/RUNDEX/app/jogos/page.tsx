@@ -8,6 +8,7 @@ import Header from "../CNPJ/dark/dark";
 import Footer from "../CNPJ/footer/footer";
 import Filter from "../CNPJ/filter/filter";
 import { apiFetch, apiUrl } from "../fetch/api";
+import { arrowLeft, arrowRight } from "../CNPJ/key";
 
 import "./background.css";
 import "./hero.css";
@@ -30,6 +31,7 @@ export default function JogosPage() {
     const [erro, setErro] = useState("");
     const [indiceAtual, setIndiceAtual] = useState(0);
     const [plataforma, setPlataforma] = useState("");
+    const carrosselRef = useRef<HTMLElement>(null);
     const cartoesRef = useRef<(HTMLDivElement | null)[]>([]);
     const focoPendente = useRef<number | null>(null);
 
@@ -54,7 +56,12 @@ export default function JogosPage() {
                 return resposta.json();
             })
             .then((dados: Jogo[]) => {
-                if (!controller.signal.aborted) setJogos(dados);
+                if (!controller.signal.aborted) {
+                    const slug = new URLSearchParams(window.location.search).get("jogo");
+                    const indice = dados.findIndex((jogo) => jogo.slug === slug);
+                    if (indice >= 0) setIndiceAtual(indice);
+                    setJogos(dados);
+                }
             })
             .catch((error) => {
                 if (!controller.signal.aborted) {
@@ -65,6 +72,19 @@ export default function JogosPage() {
 
         return () => controller.abort();
     }, []);
+
+    useEffect(() => {
+        const slug = new URLSearchParams(window.location.search).get("jogo");
+        const indice = jogos.findIndex((jogo) => jogo.slug === slug);
+        if (indice < 0) return;
+
+        const frame = requestAnimationFrame(() => {
+            cartoesRef.current[indice]?.querySelector<HTMLElement>(".cartao-selecionar")
+                ?.focus({ preventScroll: true });
+            carrosselRef.current?.scrollIntoView({ block: "start" });
+        });
+        return () => cancelAnimationFrame(frame);
+    }, [jogos]);
 
     useEffect(() => {
         if (focoPendente.current === null) return;
@@ -110,10 +130,10 @@ export default function JogosPage() {
 
     function navegarCarrossel(event: KeyboardEvent<HTMLElement>) {
         if (event.altKey || event.ctrlKey || event.metaKey) return;
-        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        if (!arrowLeft(event) && !arrowRight(event)) return;
 
         event.preventDefault();
-        const direcao = event.key === "ArrowRight" ? 1 : -1;
+        const direcao = arrowRight(event) ? 1 : -1;
         const controle = (event.target as HTMLElement).closest<HTMLElement>("[data-passo]");
 
         if (!controle) {
@@ -147,6 +167,7 @@ export default function JogosPage() {
 
     return (
         <main className="background jogos-page">
+            
             <section className="jogos-header">
                 <Header/>
             </section>
@@ -176,6 +197,8 @@ export default function JogosPage() {
                 }}/>
 
             <section
+                ref={carrosselRef}
+                id="catalogo"
                 className="jogos-carrossel"
                 aria-label="Catálogo de jogos"
                 onKeyDown={navegarCarrossel}>
@@ -238,7 +261,6 @@ export default function JogosPage() {
                                                 </span>
                                             ))}
                                         </span>
-
                                         </>
                                     )}
                                 </button>

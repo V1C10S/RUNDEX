@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef, type KeyboardEvent } from "react";
+import { useEffect, useRef } from "react";
 
 import './logo.css'
 import './links.css'
@@ -16,28 +16,10 @@ export default function Header() {
       logoRef.current?.focus();
     }, []);
 
-  function forwardsetas (event: KeyboardEvent<HTMLElement>) {
-    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
-    if (event.altKey || event.ctrlKey || event.metaKey) return;
-
-    const links = Array.from(
-      event.currentTarget.querySelectorAll<HTMLAnchorElement>("a[href]")
-    );
-
-    const current = links.indexOf(
-      document.activeElement as HTMLAnchorElement
-    );
-
-    if (current === -1) return;
-
-    event.preventDefault();
-    const direction = event.key === "ArrowRight" ? 1 : -1;
-      links[current + direction]?.focus();
-  }
 
   return (
 
-    <header className="header" onKeyDown={forwardsetas}>
+    <header className="header">
 
       <div className="header-glass" aria-hidden="true"/>
 
