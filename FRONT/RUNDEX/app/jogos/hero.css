@@ -5,10 +5,7 @@
 
 .jogos-page .hero-image-area {
     position: absolute;
-    top: -120px;
-    left: 0;
-    width: 100%;
-    height: calc(100% + 120px);
+    inset: -120px 0 0;
     overflow: hidden;
     z-index: 0;
 }

@@ -1,6 +1,9 @@
 .boas-vindas-modal {
-    width: min(680px, calc(100% - 32px));
+    inset: 16px;
+    width: auto;
+    max-width: 680px;
     height: 800px;
+    max-height: 95vh;
     margin: auto;
     padding: 32px;
     overflow-y: auto;
@@ -14,11 +17,15 @@
 }
 
 .boas-vindas-modal::backdrop { background: rgb(0 0 0 / 28%); }
-.boas-vindas-modal h2 { display: flex; justify-content: center; text-align: center; margin: 0 0 10px; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 800; }
+.boas-vindas-modal h2 {
+    margin: 0 0 10px;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+}
 .boas-vindas-mensagem { margin: 48px 0 0; line-height: 1.6; }
 .boas-vindas-texto { margin: 24px 0 0; line-height: 1.6; }
 .boas-vindas-texto + .boas-vindas-botao { margin-top: 24px; }
-.boas-vindas-lista { display: grid; gap: 12px; margin: 24px 0; padding-left: 0; line-height: 1.5; list-style: none; }
 .boas-vindas-botao {
     min-height: 44px;
     padding: 10px 24px;

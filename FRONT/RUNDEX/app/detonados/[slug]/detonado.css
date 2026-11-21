@@ -16,15 +16,14 @@
 }
 
 .detonado-content {
-    width: min(100% - 40px, 1152px);
-    margin: 40px auto 0;
+    max-width: 1480px;
+    margin: 40px 24px 0;
 }
 
 .detonado-nav {
     display: flex;
     align-items: center;
     margin-bottom: 24px;
-    margin-inline: calc(-330px);
 }
 
 .detonado-nav .rollback-link {
@@ -84,11 +83,10 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    margin-inline: calc((100% - 100vw) / 2 + 50px);
 }
 
 .detonado-inicio-line {
-    width: 1570px;
+    flex: 1;
     height: 2px;
     background: #65E6C2;
     opacity: 0.7;
@@ -188,12 +186,12 @@
 }
 
 
-.detonado-content { width: min(100% - 48px, 1480px); }
-.detonado-nav { margin-inline: 0; }
-.detonado-inicio-heading { margin-inline: 0; }
-.detonado-inicio-line { flex: 1; width: auto; }
 .detonado-layout { display: grid; grid-template-columns: minmax(230px, 310px) minmax(0, 1fr); align-items: start; gap: 28px; margin-top: 36px; }
-.detonado-indice { position: sticky; top: 20px; margin: 0; padding: 22px; border: 1px solid #293a35; border-radius: 16px; background: #101615; max-height: calc(100vh - 40px); overflow-y: auto; }
+@media (min-width: 1528px) {
+    .detonado-content { margin-inline: auto; }
+}
+
+.detonado-indice { position: sticky; top: 20px; margin: 0; padding: 22px; border: 1px solid #293a35; border-radius: 16px; background: #101615; max-height: 95vh; overflow-y: auto; }
 .detonado-indice-cabecalho { position: relative; min-height: 92px; margin-bottom: 12px; overflow: hidden; }
 .detonado-indice-console { position: absolute; right: -15px; bottom: 0; width: 115%; max-width: none; height: auto; }
 .detonado-indice-console[data-console="/usaveis/ADVANCED.png"],
@@ -215,7 +213,7 @@
     padding: 10px 22px 10px 14px;
     border: 0;
     border-radius: 12px 0 0 12px;
-    clip-path: polygon(0 0, calc(100% - 19px) 0, 100% 50%, calc(100% - 19px) 100%, 0 100%);
+    clip-path: polygon(0 0, 93% 0, 100% 50%, 93% 100%, 0 100%);
     background: #58786c;
     color: #f3f5f4;
     text-decoration: none;
@@ -228,7 +226,7 @@
     z-index: -1;
     inset: 1px;
     border-radius: 11px 0 0 11px;
-    clip-path: polygon(0 0, calc(100% - 19px) 0, 100% 50%, calc(100% - 19px) 100%, 0 100%);
+    clip-path: polygon(0 0, 93% 0, 100% 50%, 93% 100%, 0 100%);
     background: #101615;
     content: "";
 }
@@ -243,7 +241,7 @@
 .detonado-guia h2 { margin: 0 0 20px; padding-left: 14px; border-left: 4px solid #65e6c2; font-size: clamp(25px, 3vw, 36px); scroll-margin-top: 24px; }
 .detonado-guia p { max-width: 75ch; margin: 0 0 18px; color: #e2e8e4; line-height: 1.8; }
 @media (max-width: 760px) {
-    .detonado-content { width: min(100% - 32px, 1480px); }
+    .detonado-content { margin-inline: 16px; }
     .detonado-layout { grid-template-columns: 1fr; }
     .detonado-indice { position: static; max-height: none; }
     .detonado-indice ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }

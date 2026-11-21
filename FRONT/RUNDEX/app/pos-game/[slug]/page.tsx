@@ -10,7 +10,7 @@ import { apiFetch } from "../../fetch/api";
 import { heroesPorJogo } from "../../CNPJ/detonado/heroes";
 import "../../detonados/[slug]/hero.css";
 import "../../CNPJ/catalog/letter.css";
-import "./posgame.css";
+import "./game.css";
 
 type Categoria = "lendarios" | "pos-game";
 type DadosPosGame = {
@@ -120,7 +120,10 @@ function PosGameConteudo() {
 
     return (
         <div className="posgame-page" lang="pt-BR">
-            <div className="posgame-header"><Header /></div>
+            <section className="posgame-header">
+                <Header />
+            </section>
+
             {dados && heroesPorJogo[slug] && (
                 <section className="hero" aria-label="Arte do jogo">
                     <div className="hero-image-area">
@@ -128,6 +131,7 @@ function PosGameConteudo() {
                     </div>
                 </section>
             )}
+
             <main className="posgame-content">
                 <div className="posgame-nav">
                     <Rollback href="/pos-game" label="Voltar ao pós-game" />
@@ -157,8 +161,12 @@ function PosGameConteudo() {
                 {atual?.estado === "erro" && <p role="alert">Não foi possível carregar o pós-game.</p>}
                 {dados && (
                     <>
-                        <div className="posgame-inicio-heading"><div className="posgame-inicio-line" aria-hidden="true" /><span className="posgame-inicio-title">INÍCIO</span></div>
-                        <div className="posgame-layout">
+                        <div className="posgame-inicio-heading">
+                            <div className="posgame-inicio-line" aria-hidden="true" />
+                            <span className="posgame-inicio-title">INÍCIO</span>
+                        </div>
+
+                        <section className="posgame-layout" aria-label="Guia de pós-game">
                             <nav className="posgame-indice" aria-labelledby="posgame-capitulos">
                                 <div className="posgame-indice-cabecalho">
                                     {consoleImage && <Image className="posgame-indice-console" data-console={consoleImage} src={consoleImage} alt="" width={2172} height={724} />}
@@ -200,20 +208,32 @@ function PosGameConteudo() {
                                 {capitulos.length ? capitulos.map((capitulo) => {
                                     const dica = game?.dicas[capitulo.titulo];
                                     const textos = typeof dica === "string" ? [dica] : Array.isArray(dica) ? dica.filter((item): item is string => typeof item === "string") : [];
-                                    return <section key={capitulo.id} aria-labelledby={capitulo.id}><h2 id={capitulo.id} tabIndex={-1}>{capitulo.titulo}</h2>{textos.length ? textos.map((texto, i) => <p key={i}>{texto}</p>) : <p>O conteúdo deste capítulo ainda não foi adicionado.</p>}</section>;
+                                    return (
+                                        <section key={capitulo.id} aria-labelledby={capitulo.id}>
+                                            <h2 id={capitulo.id} tabIndex={-1}>{capitulo.titulo}</h2>
+                                            {textos.length
+                                                ? textos.map((texto, i) => <p key={i}>{texto}</p>)
+                                                : <p>O conteúdo deste capítulo ainda não foi adicionado.</p>}
+                                        </section>
+                                    );
                                 }) : <p>O pós-game deste jogo ainda não está disponível.</p>}
                             </div>
-                        </div>
+                        </section>
                     </>
                 )}
             </main>
-            <div className="footer-container">
+
+            <section className="footer-container">
                 <Footer />
-            </div>
+            </section>
         </div>
     );
 }
 
 export default function PosGamePage() {
-    return <Suspense fallback={<p role="status">Carregando pós-game…</p>}><PosGameConteudo /></Suspense>;
+    return (
+        <Suspense fallback={<p role="status">Carregando pós-game…</p>}>
+            <PosGameConteudo />
+        </Suspense>
+    );
 }

@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import Catalog from "../CNPJ/catalog/catalog";
-import "../[catalog]/letter.css";
 
 export const metadata = { title: "Pós-game | RUNDEX" };
 

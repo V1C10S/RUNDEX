@@ -1,5 +1,4 @@
 .jogos-carrossel {
-    --carrossel-passo: 460px;
     width: 100%;
     padding: 50px 25px 0;
     color: #f2f2f2;
@@ -52,7 +51,7 @@
 
 .jogos-carrossel .cartao-jogo[data-distancia="-2"] {
     z-index: 8;
-    transform: translateX(calc(var(--carrossel-passo) * -2)) scale(0.75) rotateY(24deg);
+    transform: translateX(-920px) scale(0.75) rotateY(24deg);
 }
 
 .jogos-carrossel .cartao-imagem {
@@ -152,7 +151,7 @@
 
 .jogos-carrossel .cartao-jogo[data-distancia="-1"] {
     z-index: 9;
-    transform: translateX(calc(var(--carrossel-passo) * -1)) scale(0.75) rotateY(12deg);
+    transform: translateX(-460px) scale(0.75) rotateY(12deg);
 }
 
 .jogos-carrossel .cartao-jogo[data-distancia="0"] {
@@ -162,12 +161,12 @@
 
 .jogos-carrossel .cartao-jogo[data-distancia="1"] {
     z-index: 9;
-    transform: translateX(var(--carrossel-passo)) scale(0.75) rotateY(-12deg);
+    transform: translateX(460px) scale(0.75) rotateY(-12deg);
 }
 
 .jogos-carrossel .cartao-jogo[data-distancia="2"] {
     z-index: 8;
-    transform: translateX(calc(var(--carrossel-passo) * 2)) scale(0.75) rotateY(-24deg);
+    transform: translateX(920px) scale(0.75) rotateY(-24deg);
 }
 
 .jogos-carrossel .cartao-jogo[data-visivel="false"] {

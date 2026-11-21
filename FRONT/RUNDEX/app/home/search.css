@@ -71,12 +71,12 @@
 
 .hero-search-suggestions {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 0;
   z-index: 10;
   width: 100%;
   max-height: 264px;
-  margin: 0;
+  margin: 8px 0 0;
   padding: 8px;
   box-sizing: border-box;
   overflow-y: auto;
@@ -104,7 +104,6 @@
 
 .hero-search-button {
   position: absolute;
-    content: "→";
   top: 5px;
   right: 5px;
   width: 54px;

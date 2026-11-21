@@ -15,9 +15,12 @@
 }
 
 .catalog-content {
-    width: calc(100% - clamp(48px, 6vw, 100px));
     max-width: 1800px;
-    margin: 40px auto 0;
+    margin: 40px 24px 0;
+}
+
+@media (min-width: 1848px) {
+    .catalog-content { margin-inline: auto; }
 }
 
 .catalog-secao {
@@ -26,7 +29,7 @@
 
 .catalog-secao-titulo {
     font-family: "Arial Black", Arial, sans-serif;
-    font-size: clamp(24px, 5.5vw, 64px);
+    font-size: 64px;
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: 0.1em;
@@ -40,7 +43,7 @@
 .catalog-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 550px));
-    gap: 24px clamp(20px, 2.6vw, 30px);
+    gap: 24px 30px;
 }
 
 .catalog-card {
@@ -171,7 +174,7 @@
 
     .catalog-header .header-logo {
         margin: 0;
-        font-size: clamp(32px, 6vw, 64px);
+        font-size: 64px;
     }
 
     .catalog-header .header-links {
@@ -180,7 +183,7 @@
         justify-content: center;
         gap: 16px 24px;
         margin: 0;
-        font-size: 1rem;
+        font-size: 16px;
     }
 
     .catalog-header .header-glass {
@@ -190,12 +193,23 @@
 }
 
 @media (max-width: 1020px) {
+    .catalog-secao-titulo,
+    .catalog-header .header-logo {
+        font-size: 48px;
+    }
+
     .catalog-grid {
         grid-template-columns: repeat(2, minmax(0, 550px));
+        gap: 24px;
     }
 }
 
 @media (max-width: 680px) {
+    .catalog-secao-titulo,
+    .catalog-header .header-logo {
+        font-size: 32px;
+    }
+
     .catalog-grid {
         grid-template-columns: minmax(0, 550px);
         justify-content: center;

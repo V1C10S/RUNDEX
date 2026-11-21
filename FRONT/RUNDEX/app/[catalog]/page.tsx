@@ -1,8 +1,6 @@
 import { Suspense } from "react";
 import Catalog from "../CNPJ/catalog/catalog";
 
-import './letter.css'
-
 const secoes = ["detonados", "builds", "pos-game"] as const;
 
 export const metadata = {

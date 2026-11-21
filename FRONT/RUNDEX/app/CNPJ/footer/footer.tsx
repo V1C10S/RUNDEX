@@ -10,21 +10,18 @@ export default function Footer() {
             <div className="footer-content">
                 <div className="footer-box">
                     <div className="footer-item footer-brand">
-                        <h1 className="footer-logo">
-                            <span className="footer-logo-name">RUNDEX</span>
-                        </h1>
+                        <h2 className="footer-title">RUNDEX</h2>
 
-                        <p className="footer-description">
-
-                        </p>
+                        <p className="footer-description">Explore jogos, descubra estratégias e encontre sua próxima aventura</p>
                     </div>
 
                     <div className="footer-item footer-contact">
-                        <h2 className="footer-contact-title">CONTATO</h2>
+                        <h2 className="footer-title">CONTATO</h2>
+                        <p className="footer-contact-email">contato@rundex.com</p>
                     </div>
 
                     <div className="footer-item footer-socials">
-                        <h2 className="footer-socials-title">REDES SOCIAIS</h2>
+                        <h2 className="footer-title">REDES SOCIAIS</h2>
 
                         <div className="footer-socials-icons">
                             <Image src="/images/footer/facebook.png" alt="" width={35} height={35} className="footer-social-icon"/>

@@ -13,16 +13,12 @@ export const metadata = {
 };
 
 export default function DetonadoPage() {
-
-    const rollback = <Rollback href="/detonados" label="Voltar aos detonados"/>;
-    
+    const rollback = <Rollback href="/detonados" label="Voltar aos detonados" />;
     return (
-
         <div className="detonado-page">
-            
-            <div className="detonado-header">
-                <Header/>
-            </div>
+            <section className="detonado-header">
+                <Header />
+            </section>
 
             <main>
                 <Suspense fallback={
@@ -31,13 +27,13 @@ export default function DetonadoPage() {
                         <p role="status">Carregando detonado…</p>
                     </div>
                 }>
-                    <Detonado rollback={rollback}/>
+                    <Detonado rollback={rollback} />
                 </Suspense>
             </main>
 
-            <div className="footer-container">
-                <Footer/>
-            </div>
+            <section className="footer-container">
+                <Footer />
+            </section>
         </div>
     );
 }

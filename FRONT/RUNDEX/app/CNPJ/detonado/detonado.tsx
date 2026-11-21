@@ -27,8 +27,6 @@ type Resultado = { slug: string } & (
     | { estado: "erro" }
 );
 
-
-
 function arteConsole(plataformas: string[]): string | null {
     const nomes = plataformas.map((plataforma) => plataforma.trim().toUpperCase());
     const grupos = [
@@ -98,7 +96,6 @@ export default function Detonado({ rollback }: { rollback: ReactNode }) {
     let posicao = 0;
 
     const navegacao = (
-
         <div className="detonado-nav">
             {rollback}
             {dados && titulo ? (
@@ -119,7 +116,6 @@ export default function Detonado({ rollback }: { rollback: ReactNode }) {
                             ))}
                         </span>
                     </h1>
-
                     {dados.plataformas.length > 0 ? (
                         <ul className="detonado-badges" role="list" aria-label="Plataformas">
                             {dados.plataformas.map((plataforma) => (
@@ -156,46 +152,46 @@ export default function Detonado({ rollback }: { rollback: ReactNode }) {
                     </div>
                 </section>
             )}
+
             <div className="detonado-content">
-            {navegacao}
-            <div className="detonado-inicio-heading">
-                <div className="detonado-inicio-line" aria-hidden="true"/>
-                <span className="detonado-inicio-title">INÍCIO</span>
-            </div>
-
-            {guia && guia.capitulos.length > 0 ? (
-                <div className="detonado-layout">
-                    <nav className="detonado-indice" aria-labelledby="detonado-capitulos">
-                        <div className="detonado-indice-cabecalho">
-                            {consoleImage && (
-                                <Image className="detonado-indice-console" data-console={consoleImage} src={consoleImage} alt="" width={2172} height={724} />
-                            )}
-                            <h2 id="detonado-capitulos"> <span className="detonado-indice-pokebola" aria-hidden="true" />CAPITULOS</h2>
-                        </div>
-                        <ol>
-                            {guia.capitulos.map((capitulo, indice) => (
-                                <li key={capitulo.slug}>
-                                    <a href={`#${capitulo.slug}`} aria-current={capituloAtivo === capitulo.slug ? "location" : undefined}>
-                                        <span className="ribbon-numero" aria-hidden="true">{String(indice + 1).padStart(2, "0")}</span>
-                                        <span className="ribbon-titulo">{capitulo.titulo}</span>
-                                        <span className="ribbon-seta" aria-hidden="true" />
-                                    </a>
-                                </li>
-                            ))}
-                        </ol>
-                    </nav>
-
-                    <div className="detonado-guia">
-                        {guia.capitulos.map((capitulo) => (
-                            <section key={capitulo.slug} aria-labelledby={capitulo.slug}>
-                                <h2 id={capitulo.slug} tabIndex={-1}>{capitulo.titulo}</h2>
-                                {capitulo.passos.map((passo, indice) => <p key={indice}>{passo}</p>)}
-                            </section>
-                        ))}
-                    </div>
+                {navegacao}
+                <div className="detonado-inicio-heading">
+                    <div className="detonado-inicio-line" aria-hidden="true" />
+                    <span className="detonado-inicio-title">INÍCIO</span>
                 </div>
 
-            ) : <p>O guia deste jogo ainda não está disponível.</p>}
+                {guia && guia.capitulos.length > 0 ? (
+                    <section className="detonado-layout" aria-label="Guia do detonado">
+                        <nav className="detonado-indice" aria-labelledby="detonado-capitulos">
+                            <div className="detonado-indice-cabecalho">
+                                {consoleImage && (
+                                    <Image className="detonado-indice-console" data-console={consoleImage} src={consoleImage} alt="" width={2172} height={724} />
+                                )}
+                                <h2 id="detonado-capitulos"><span className="detonado-indice-pokebola" aria-hidden="true" />CAPITULOS</h2>
+                            </div>
+                            <ol>
+                                {guia.capitulos.map((capitulo, indice) => (
+                                    <li key={capitulo.slug}>
+                                        <a href={`#${capitulo.slug}`} aria-current={capituloAtivo === capitulo.slug ? "location" : undefined}>
+                                            <span className="ribbon-numero" aria-hidden="true">{String(indice + 1).padStart(2, "0")}</span>
+                                            <span className="ribbon-titulo">{capitulo.titulo}</span>
+                                            <span className="ribbon-seta" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                ))}
+                            </ol>
+                        </nav>
+
+                        <div className="detonado-guia">
+                            {guia.capitulos.map((capitulo) => (
+                                <section key={capitulo.slug} aria-labelledby={capitulo.slug}>
+                                    <h2 id={capitulo.slug} tabIndex={-1}>{capitulo.titulo}</h2>
+                                    {capitulo.passos.map((passo, indice) => <p key={indice}>{passo}</p>)}
+                                </section>
+                            ))}
+                        </div>
+                    </section>
+                ) : <p>O guia deste jogo ainda não está disponível.</p>}
             </div>
         </>
     );

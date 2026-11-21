@@ -15,7 +15,7 @@
   grid-template-columns: repeat(4, max-content);
   column-gap: 50px;
   font-family: "Arial Black", Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 24px;
   color: #C8C8C8;
 }
 
