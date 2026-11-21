@@ -197,7 +197,11 @@
 .detonado-indice-cabecalho { position: relative; min-height: 92px; margin-bottom: 12px; overflow: hidden; }
 .detonado-indice-console { position: absolute; right: -15px; bottom: 0; width: 115%; max-width: none; height: auto; }
 .detonado-indice-console[data-console="/usaveis/ADVANCED.png"],
-.detonado-indice-console[data-console="/usaveis/SWITCH.png"] { transform: translateY(16%); }
+.detonado-indice-console[data-console="/usaveis/DS.png"],
+.detonado-indice-console[data-console="/usaveis/SWITCH.png"] { right: 0; width: 100%; }
+.detonado-indice-console[data-console="/usaveis/ADVANCED.png"] + h2 { bottom: 37px; }
+.detonado-indice-console[data-console="/usaveis/DS.png"] + h2 { bottom: 22px; }
+.detonado-indice-console[data-console="/usaveis/SWITCH.png"] + h2 { bottom: 37px; }
 .detonado-indice h2 { position: absolute; left: 2px; right: 50px; bottom: 27px; display: flex; align-items: center; gap: 10px; margin-left: 0px; color: #f4f7f6; font-size: 25px; }
 .detonado-indice-pokebola { flex: none; width: 22px; height: 22px; background: url('/usaveis/POKEBALL.png') center / 300% auto no-repeat; }
 .detonado-indice ol { display: grid; gap: 8px; list-style: none; padding: 0; margin: 0; }

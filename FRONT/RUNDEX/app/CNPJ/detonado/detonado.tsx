@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 
 import { apiFetch } from "../../fetch/api";
+import { heroesPorJogo } from "./heroes";
 
 type Capitulo = {
     slug: string;
@@ -25,6 +26,8 @@ type Resultado = { slug: string } & (
     | { estado: "inexistente" }
     | { estado: "erro" }
 );
+
+
 
 function arteConsole(plataformas: string[]): string | null {
     const nomes = plataformas.map((plataforma) => plataforma.trim().toUpperCase());
@@ -142,9 +145,7 @@ export default function Detonado({ rollback }: { rollback: ReactNode }) {
 
     const { guia } = dados;
     const consoleImage = arteConsole(dados.plataformas);
-    const hero = consoleImage === "/usaveis/GAME BOY.png"
-        ? "/images/detonados/DETONADOS GB.png"
-        : null;
+    const hero = heroesPorJogo[slug] ?? null;
 
     return (
         <>

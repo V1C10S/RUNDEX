@@ -7,6 +7,7 @@ import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 
 import Header from "../CNPJ/header/header";
 import Footer from "../CNPJ/footer/footer";
+import Modal from "../CNPJ/modal/modal";
 import { apiFetch, apiUrl } from "../fetch/api";
 import { arrowTop, arrowDown, hasModifier } from "../CNPJ/key";
 
@@ -167,7 +168,7 @@ export default function HomePage() {
     return (
         <main className="background">
         
-            <section className="header" ref={headerRef}>
+            <section className="header" ref={headerRef} data-key-down="home-busca">
                 <Header/>
             </section>
 
@@ -254,6 +255,8 @@ export default function HomePage() {
                     <div className="hero-search-bar">
 
                         <input
+                        id="home-busca"
+                        data-key-down="home-orientacoes"
                         ref={searchRef}
                         type="search"
                         role="combobox"
@@ -307,8 +310,9 @@ export default function HomePage() {
                         )}
 
                     </div>
-                    <button type="button" className="hero-search-button" aria-label="Buscar jogo" onClick={submitSearch}/>                      
+                    <button type="button" className="hero-search-button" aria-label="Buscar jogo" onClick={submitSearch}/>
                 </div>
+                <Modal />
             </section>
 
 
@@ -331,6 +335,7 @@ export default function HomePage() {
                             return (
                                 <Link
                                     key={card.number}
+                                    id={card.number === 1 ? "home-destaque-1" : undefined}
                                     className={className}
                                     href={`/detonados/${encodeURIComponent(jogo.slug)}`}
                                     aria-label={`Detonado de ${jogo.name}`}>

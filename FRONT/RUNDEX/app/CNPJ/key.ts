@@ -17,6 +17,8 @@ export const keyRules: KeyRules = {
     custom: true,
 };
 
+let ultimoFoco: HTMLElement | null = null;
+
 type KeyEvent = { key: string };
 type ModifierEvent = { altKey: boolean; ctrlKey: boolean; metaKey: boolean; shiftKey: boolean };
 
@@ -57,18 +59,41 @@ export function Key(event: KeyboardEvent, rules: KeyRules = keyRules) {
         element.getClientRects().length > 0 && getComputedStyle(element).visibility === "visible";
     const modals = Array.from(document.querySelectorAll<HTMLElement>('dialog[open], [role="dialog"][aria-modal="true"]')).filter(visible);
     const scope: ParentNode = modals.at(-1) ?? document;
-    if (scope !== document && !scope.contains(active)) return;
-    if (!active.matches(selectors.join(","))) {
-        // Um link de capítulo pode transferir o foco para o título de destino.
-        // A próxima seta devolve o foco ao link correspondente.
-        if (rules.links && active.id && active.tabIndex === -1) {
+    if (!scope.contains(active) || !active.matches(selectors.join(","))) {
+        // Um título de capítulo recebe foco ao abrir sua âncora.
+        if (scope.contains(active) && rules.links && active.id && active.tabIndex === -1) {
             const link = Array.from(scope.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'))
-                .find((element) => element.getAttribute("href") === `#${active.id}` && visible(element));
-            link?.focus();
+                .find((element) => element.getAttribute("href") === "#" + active.id && visible(element));
+            if (link) {
+                link.focus();
+                return;
+            }
         }
+
+        // Ao clicar em uma área vazia, retoma o último foco ainda disponível.
+        const podeFocar = (element: HTMLElement) =>
+            element.isConnected && scope.contains(element) &&
+            element.matches(selectors.join(",")) && element.tabIndex >= 0 &&
+            !element.matches(':disabled, [aria-disabled="true"]') && visible(element);
+        const destino = ultimoFoco && podeFocar(ultimoFoco)
+            ? ultimoFoco
+            : Array.from(scope.querySelectorAll<HTMLElement>(selectors.join(","))).find(podeFocar);
+        destino?.focus();
         return;
     }
     if (!visible(active)) return;
+
+    // Uma área pode indicar o próximo elemento ao navegar para baixo.
+    if (arrowDown(event)) {
+        const destinoId = active.closest<HTMLElement>("[data-key-down]")?.dataset.keyDown;
+        const destino = destinoId ? document.getElementById(destinoId) : null;
+        if (destino instanceof HTMLElement && scope.contains(destino) &&
+            destino.matches(selectors.join(",")) && destino.tabIndex >= 0 &&
+            !destino.matches(':disabled, [aria-disabled="true"]') && visible(destino)) {
+            destino.focus();
+            return;
+        }
+    }
 
     const current = active.getBoundingClientRect();
     const candidates = Array.from(scope.querySelectorAll<HTMLElement>(selectors.join(",")))
@@ -108,8 +133,19 @@ export function Key(event: KeyboardEvent, rules: KeyRules = keyRules) {
 export function KeyNavigation() {
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => Key(event);
+        const handleFocusIn = (event: FocusEvent) => {
+            const target = event.target;
+            if (target instanceof HTMLElement &&
+                target.matches('a[href], button, input:not([type="hidden"]), select, textarea, [data-key-nav]')) {
+                ultimoFoco = target;
+            }
+        };
         document.addEventListener("keydown", handleKeyDown);
-        return () => document.removeEventListener("keydown", handleKeyDown);
+        document.addEventListener("focusin", handleFocusIn);
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+            document.removeEventListener("focusin", handleFocusIn);
+        };
     }, []);
     return null;
 }

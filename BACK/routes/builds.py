@@ -16,6 +16,7 @@ class DadosBuilds(BaseModel):
     caps: list[str]
     dicas: dict[str, object]
     images: dict[str, object]
+    categorias: dict[str, str]
 
 
 class Builds(BaseModel):
@@ -33,7 +34,7 @@ def obter_builds(slug: str):
     try:
         with connect() as connection:
             dados = connection.execute(
-                "SELECT slug, caps, dicas, images FROM public.builds WHERE slug = %s",
+                "SELECT slug, caps, dicas, images, categorias FROM public.builds WHERE slug = %s",
                 (slug,),
             ).fetchone()
     except psycopg.Error:
@@ -43,5 +44,6 @@ def obter_builds(slug: str):
     return Builds(
         nome=jogo["name"],
         plataformas=jogo["platforms"],
-        builds=DadosBuilds(slug=dados[0], caps=dados[1], dicas=dados[2], images=dados[3]) if dados is not None else None,
-    )
+        builds=DadosBuilds(slug=dados[0], caps=dados[1], dicas=dados[2], images=dados[3], categorias=dados[4]) if dados is not None else None,
+    )
+

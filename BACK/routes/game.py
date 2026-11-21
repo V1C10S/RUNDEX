@@ -16,6 +16,7 @@ class DadosGame(BaseModel):
     caps: list[str]
     dicas: dict[str, object]
     images: dict[str, object]
+    categorias: dict[str, str]
 
 
 class PosGame(BaseModel):
@@ -33,7 +34,7 @@ def obter_game(slug: str):
     try:
         with connect() as connection:
             dados = connection.execute(
-                "SELECT slug, caps, dicas, images FROM public.game WHERE slug = %s",
+                "SELECT slug, caps, dicas, images, categorias FROM public.game WHERE slug = %s",
                 (slug,),
             ).fetchone()
     except psycopg.Error:
@@ -43,5 +44,5 @@ def obter_game(slug: str):
     return PosGame(
         nome=jogo["name"],
         plataformas=jogo["platforms"],
-        game=DadosGame(slug=dados[0], caps=dados[1], dicas=dados[2], images=dados[3]) if dados is not None else None,
+        game=DadosGame(slug=dados[0], caps=dados[1], dicas=dados[2], images=dados[3], categorias=dados[4]) if dados is not None else None,
     )

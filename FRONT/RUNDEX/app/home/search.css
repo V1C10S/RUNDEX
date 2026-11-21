@@ -23,7 +23,6 @@
   transition: box-shadow 250ms ease;
 }
 
-/* Lupa */
 .hero-search-bar::before {
   content: "";
   width: 17px;

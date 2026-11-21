@@ -6,7 +6,6 @@ import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 
 import Header from "../CNPJ/dark/dark";
 import Footer from "../CNPJ/footer/footer";
-import Filter from "../CNPJ/filter/filter";
 import { apiFetch, apiUrl } from "../fetch/api";
 import { arrowLeft, arrowRight } from "../CNPJ/key";
 
@@ -30,20 +29,14 @@ export default function JogosPage() {
     const [jogos, setJogos] = useState<Jogo[]>([]);
     const [erro, setErro] = useState("");
     const [indiceAtual, setIndiceAtual] = useState(0);
-    const [plataforma, setPlataforma] = useState("");
     const carrosselRef = useRef<HTMLElement>(null);
     const cartoesRef = useRef<(HTMLDivElement | null)[]>([]);
     const focoPendente = useRef<number | null>(null);
 
-    const plataformas = Array.from(new Set(jogos.flatMap((jogo) => jogo.platforms)));
-    const jogosFiltrados = plataforma
-        ? jogos.filter((jogo) => jogo.platforms.includes(plataforma))
-        : jogos;
-
-    const slots = Array.from({ length: jogosFiltrados.length || 30 }, (_, indice) => ({
+    const slots = Array.from({ length: jogos.length || 30 }, (_, indice) => ({
         id: indice + 1,
         indice,
-        jogo: jogosFiltrados[indice],
+        jogo: jogos[indice],
     }));
     const indiceAtivo = indiceAtual % slots.length;
 
@@ -142,7 +135,7 @@ export default function JogosPage() {
         }
 
         const proximoPasso = Number(controle.dataset.passo) + direcao;
-        const totalPassos = jogosFiltrados[indiceAtivo] ? 4 : 1;
+        const totalPassos = jogos[indiceAtivo] ? 4 : 1;
 
         if (proximoPasso >= 0 && proximoPasso < totalPassos) {
             cartoesRef.current[indiceAtivo]
@@ -152,7 +145,7 @@ export default function JogosPage() {
         }
 
         const proximoIndice = (indiceAtivo + direcao + slots.length) % slots.length;
-        const passo = direcao === 1 ? 0 : jogosFiltrados[proximoIndice] ? 3 : 0;
+        const passo = direcao === 1 ? 0 : jogos[proximoIndice] ? 3 : 0;
 
         if (proximoIndice === indiceAtivo) {
             cartoesRef.current[proximoIndice]
@@ -187,14 +180,6 @@ export default function JogosPage() {
                     <div className="cards-line"/>
                     <span className="cards-title">JOGOS</span>
                 </div>
-
-            <Filter
-                plataformas={plataformas}
-                plataforma={plataforma}
-                onSelecionar={(nome) => {
-                    setPlataforma(nome);
-                    setIndiceAtual(0);
-                }}/>
 
             <section
                 ref={carrosselRef}

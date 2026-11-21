@@ -1,0 +1,56 @@
+.boas-vindas-modal {
+    width: min(680px, calc(100% - 32px));
+    height: 800px;
+    margin: auto;
+    padding: 32px;
+    overflow-y: auto;
+    color: #f2f5f3;
+    background: linear-gradient(135deg, rgb(75 75 80 / 28%), rgb(20 20 24 / 38%));
+    border: 1px solid rgb(255 255 255 / 30%);
+    border-radius: 16px;
+    box-shadow: 0 20px 80px #0009, inset 0 1px 0 rgb(255 255 255 / 12%);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
+}
+
+.boas-vindas-modal::backdrop { background: rgb(0 0 0 / 28%); }
+.boas-vindas-modal h2 { display: flex; justify-content: center; text-align: center; margin: 0 0 10px; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 800; }
+.boas-vindas-mensagem { margin: 48px 0 0; line-height: 1.6; }
+.boas-vindas-texto { margin: 24px 0 0; line-height: 1.6; }
+.boas-vindas-texto + .boas-vindas-botao { margin-top: 24px; }
+.boas-vindas-lista { display: grid; gap: 12px; margin: 24px 0; padding-left: 0; line-height: 1.5; list-style: none; }
+.boas-vindas-botao {
+    min-height: 44px;
+    padding: 10px 24px;
+    color: #0d211b;
+    background: #65e6c2;
+    border: 1px solid #65e6c2;
+    border-radius: 8px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.boas-vindas-botao:is(:hover, :focus) { background: #a1f4dc; outline: none; }
+
+.boas-vindas-abrir {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    color: #65e6c2;
+    background: #101816;
+    border: 1px solid #65e6c2;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.boas-vindas-abrir:is(:hover, :focus) {
+    color: #0d211b;
+    background: #65e6c2;
+    outline: none;
+}
