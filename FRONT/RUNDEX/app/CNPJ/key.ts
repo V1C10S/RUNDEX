@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 
-// As regras abaixo definem quais elementos entram na navegação.
 export type KeyRules = {
     links: boolean;
     buttons: boolean;
@@ -41,11 +40,9 @@ export function Key(event: KeyboardEvent, rules: KeyRules = keyRules) {
         return;
     }
 
-    // Controles que usam setas para edição ou seleção mantêm seu comportamento.
     if (active.isContentEditable || active.matches('textarea, select, input[type="range"], input[type="number"], input[type="date"], input[type="time"], input[type="radio"], [role="slider"], [role="listbox"], [role="menu"], [role="tablist"], [role="radiogroup"]')) return;
     if (active instanceof HTMLInputElement && (arrowLeft(event) || arrowRight(event)) && ["text", "search", "email", "url", "tel", "password"].includes(active.type)) return;
 
-    // As setas não rolam a página mesmo quando não existe próximo elemento.
     event.preventDefault();
 
     const selectors: string[] = [];
@@ -60,7 +57,7 @@ export function Key(event: KeyboardEvent, rules: KeyRules = keyRules) {
     const modals = Array.from(document.querySelectorAll<HTMLElement>('dialog[open], [role="dialog"][aria-modal="true"]')).filter(visible);
     const scope: ParentNode = modals.at(-1) ?? document;
     if (!scope.contains(active) || !active.matches(selectors.join(","))) {
-        // Um título de capítulo recebe foco ao abrir sua âncora.
+
         if (scope.contains(active) && rules.links && active.id && active.tabIndex === -1) {
             const link = Array.from(scope.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'))
                 .find((element) => element.getAttribute("href") === "#" + active.id && visible(element));
@@ -70,7 +67,6 @@ export function Key(event: KeyboardEvent, rules: KeyRules = keyRules) {
             }
         }
 
-        // Ao clicar em uma área vazia, retoma o último foco ainda disponível.
         const podeFocar = (element: HTMLElement) =>
             element.isConnected && scope.contains(element) &&
             element.matches(selectors.join(",")) && element.tabIndex >= 0 &&
@@ -83,7 +79,6 @@ export function Key(event: KeyboardEvent, rules: KeyRules = keyRules) {
     }
     if (!visible(active)) return;
 
-    // Uma área pode indicar o próximo elemento ao navegar para baixo.
     if (arrowDown(event)) {
         const destinoId = active.closest<HTMLElement>("[data-key-down]")?.dataset.keyDown;
         const destino = destinoId ? document.getElementById(destinoId) : null;
@@ -129,7 +124,6 @@ export function Key(event: KeyboardEvent, rules: KeyRules = keyRules) {
     next?.focus();
 }
 
-// Ativa a mesma lógica em todas as páginas.
 export function KeyNavigation() {
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => Key(event);
